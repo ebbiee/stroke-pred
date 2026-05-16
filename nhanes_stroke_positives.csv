@@ -1,0 +1,899 @@
+gender,age,hypertension,heart_disease,ever_married,avg_glucose_level,bmi,smoking_status,stroke,cycle
+Male,69.0,1,0,Yes,,26.7,formerly smoked,1,2013-2014
+Male,65.0,1,0,Yes,,,smokes,1,2013-2014
+Male,71.0,0,0,Yes,133.0,30.3,formerly smoked,1,2013-2014
+Female,61.0,1,0,Yes,86.0,36.4,never smoked,1,2013-2014
+Female,48.0,1,1,Yes,102.0,46.2,smokes,1,2013-2014
+Male,68.0,1,0,No,,23.2,formerly smoked,1,2013-2014
+Female,68.0,1,0,Yes,,28.9,never smoked,1,2013-2014
+Female,57.0,1,1,Yes,,64.7,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,,,formerly smoked,1,2013-2014
+Female,70.0,1,0,Yes,94.0,34.4,never smoked,1,2013-2014
+Female,57.0,1,1,Yes,,20.8,never smoked,1,2013-2014
+Male,80.0,1,0,No,,23.8,never smoked,1,2013-2014
+Male,60.0,1,1,Yes,,36.2,never smoked,1,2013-2014
+Female,44.0,1,1,No,,,never smoked,1,2013-2014
+Female,60.0,0,0,Yes,159.0,27.8,smokes,1,2013-2014
+Male,74.0,1,0,No,98.0,26.4,smokes,1,2013-2014
+Female,58.0,1,0,Yes,,26.4,smokes,1,2013-2014
+Female,60.0,1,1,Yes,120.0,41.1,formerly smoked,1,2013-2014
+Male,75.0,1,1,Yes,,,never smoked,1,2013-2014
+Male,64.0,1,0,Yes,86.0,28.3,formerly smoked,1,2013-2014
+Female,69.0,1,1,Yes,,29.0,never smoked,1,2013-2014
+Female,48.0,1,0,Yes,93.0,28.6,smokes,1,2013-2014
+Male,53.0,1,1,Yes,106.0,26.8,never smoked,1,2013-2014
+Male,80.0,1,0,Yes,,25.4,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,,28.6,never smoked,1,2013-2014
+Female,80.0,1,0,Yes,,24.9,formerly smoked,1,2013-2014
+Male,43.0,0,1,Yes,117.0,37.6,never smoked,1,2013-2014
+Female,61.0,1,0,Yes,,20.7,never smoked,1,2013-2014
+Female,68.0,1,0,Yes,111.0,17.6,never smoked,1,2013-2014
+Male,66.0,1,0,Yes,,31.1,formerly smoked,1,2013-2014
+Female,74.0,1,0,Yes,,32.4,never smoked,1,2013-2014
+Male,80.0,0,0,Yes,129.0,31.7,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,122.0,31.5,formerly smoked,1,2013-2014
+Male,66.0,1,0,Yes,109.0,25.8,never smoked,1,2013-2014
+Female,46.0,1,1,Yes,,35.8,never smoked,1,2013-2014
+Male,63.0,1,0,Yes,,27.6,smokes,1,2013-2014
+Male,56.0,1,1,Yes,256.0,29.2,formerly smoked,1,2013-2014
+Male,75.0,1,0,Yes,,27.8,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,,27.3,never smoked,1,2013-2014
+Male,80.0,1,1,Yes,,32.3,formerly smoked,1,2013-2014
+Female,51.0,1,0,Yes,,28.9,never smoked,1,2013-2014
+Male,68.0,1,1,Yes,,35.4,smokes,1,2013-2014
+Male,61.0,1,0,Yes,,18.5,smokes,1,2013-2014
+Male,64.0,0,1,Yes,,,never smoked,1,2013-2014
+Female,80.0,0,0,Yes,95.0,26.2,formerly smoked,1,2013-2014
+Male,63.0,1,0,Yes,,31.2,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,86.0,21.8,never smoked,1,2013-2014
+Female,68.0,0,1,Yes,90.0,24.2,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,126.0,,never smoked,1,2013-2014
+Female,64.0,1,1,Yes,,,never smoked,1,2013-2014
+Male,74.0,1,1,Yes,95.0,26.6,smokes,1,2013-2014
+Female,74.0,1,0,Yes,,30.4,never smoked,1,2013-2014
+Male,59.0,0,0,Yes,84.0,23.2,never smoked,1,2013-2014
+Male,79.0,1,0,Yes,102.0,24.0,formerly smoked,1,2013-2014
+Female,50.0,0,0,Yes,,29.0,smokes,1,2013-2014
+Female,58.0,1,0,Yes,91.0,17.3,smokes,1,2013-2014
+Female,71.0,1,0,Yes,,32.6,never smoked,1,2013-2014
+Female,72.0,0,1,Yes,,28.2,formerly smoked,1,2013-2014
+Female,70.0,1,0,Yes,,38.9,formerly smoked,1,2013-2014
+Male,66.0,0,0,Yes,218.0,30.9,formerly smoked,1,2013-2014
+Male,34.0,1,0,Yes,,20.7,smokes,1,2013-2014
+Male,80.0,1,1,Yes,129.0,,never smoked,1,2013-2014
+Male,64.0,1,0,No,,41.3,formerly smoked,1,2013-2014
+Male,57.0,0,0,Yes,104.0,27.9,never smoked,1,2013-2014
+Male,67.0,1,0,Yes,,32.2,formerly smoked,1,2013-2014
+Female,71.0,1,0,Yes,159.0,28.5,never smoked,1,2013-2014
+Male,52.0,0,0,Yes,,57.3,never smoked,1,2013-2014
+Female,67.0,1,1,Yes,,34.5,never smoked,1,2013-2014
+Female,60.0,1,0,Yes,103.0,63.0,formerly smoked,1,2013-2014
+Female,80.0,0,0,Yes,122.0,34.0,never smoked,1,2013-2014
+Female,79.0,1,0,Yes,,29.8,never smoked,1,2013-2014
+Female,72.0,1,0,Yes,,33.1,formerly smoked,1,2013-2014
+Male,74.0,0,0,Yes,160.0,27.7,formerly smoked,1,2013-2014
+Female,76.0,0,0,Yes,,34.7,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,,37.4,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,104.0,25.9,never smoked,1,2013-2014
+Female,68.0,1,0,Yes,,21.2,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,95.0,24.7,never smoked,1,2013-2014
+Male,79.0,1,0,Yes,,20.9,formerly smoked,1,2013-2014
+Female,58.0,1,0,Yes,159.0,41.2,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,111.0,23.9,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,92.0,25.8,formerly smoked,1,2013-2014
+Male,80.0,1,1,Yes,126.0,29.0,formerly smoked,1,2013-2014
+Male,80.0,0,0,Yes,91.0,23.9,never smoked,1,2013-2014
+Female,80.0,1,1,Yes,,,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,,32.2,formerly smoked,1,2013-2014
+Male,73.0,0,1,Yes,112.0,24.7,never smoked,1,2013-2014
+Female,57.0,1,0,Yes,,,smokes,1,2013-2014
+Female,66.0,0,0,No,,22.7,smokes,1,2013-2014
+Female,80.0,0,0,Yes,103.0,27.4,formerly smoked,1,2013-2014
+Female,76.0,1,1,Yes,212.0,22.9,formerly smoked,1,2013-2014
+Male,78.0,1,0,Yes,129.0,33.0,smokes,1,2013-2014
+Female,72.0,1,0,Yes,,29.7,never smoked,1,2013-2014
+Female,57.0,1,0,Yes,,31.6,formerly smoked,1,2013-2014
+Male,60.0,1,1,Yes,87.0,22.4,formerly smoked,1,2013-2014
+Male,66.0,0,0,Yes,,26.9,smokes,1,2013-2014
+Female,62.0,1,0,Yes,107.0,30.1,formerly smoked,1,2013-2014
+Female,60.0,1,1,No,,28.3,never smoked,1,2013-2014
+Female,70.0,1,1,Yes,93.0,36.0,never smoked,1,2013-2014
+Female,70.0,0,0,Yes,122.0,26.3,never smoked,1,2013-2014
+Male,78.0,1,1,Yes,,25.9,formerly smoked,1,2013-2014
+Female,67.0,1,0,Yes,103.0,31.6,smokes,1,2013-2014
+Female,70.0,0,0,Yes,,28.0,never smoked,1,2013-2014
+Male,80.0,1,0,Yes,147.0,24.0,never smoked,1,2013-2014
+Female,80.0,0,1,Yes,102.0,30.1,never smoked,1,2013-2014
+Female,68.0,1,0,Yes,,22.2,smokes,1,2013-2014
+Female,74.0,1,0,Yes,,26.3,formerly smoked,1,2013-2014
+Female,43.0,1,0,Yes,97.0,25.6,smokes,1,2013-2014
+Female,50.0,0,0,Yes,,,never smoked,1,2013-2014
+Male,78.0,1,0,Yes,,34.9,formerly smoked,1,2013-2014
+Male,79.0,1,0,Yes,,19.1,formerly smoked,1,2013-2014
+Female,71.0,1,0,Yes,,37.9,formerly smoked,1,2013-2014
+Male,65.0,1,0,Yes,,34.1,formerly smoked,1,2013-2014
+Male,70.0,1,1,Yes,83.0,28.9,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,84.0,24.5,never smoked,1,2013-2014
+Male,80.0,0,0,Yes,110.0,19.7,formerly smoked,1,2013-2014
+Female,78.0,1,0,Yes,91.0,24.4,never smoked,1,2013-2014
+Male,76.0,1,1,Yes,105.0,23.8,never smoked,1,2013-2014
+Female,52.0,1,0,No,118.0,30.5,smokes,1,2013-2014
+Female,62.0,1,1,Yes,,28.3,never smoked,1,2013-2014
+Female,55.0,0,0,Yes,157.0,53.9,smokes,1,2013-2014
+Female,62.0,1,0,Yes,91.0,30.0,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,202.0,26.3,never smoked,1,2013-2014
+Female,62.0,1,0,Yes,,44.4,formerly smoked,1,2013-2014
+Male,44.0,0,0,Yes,,25.6,formerly smoked,1,2013-2014
+Male,22.0,0,0,No,,28.3,never smoked,1,2013-2014
+Male,70.0,1,1,Yes,,32.7,never smoked,1,2013-2014
+Female,42.0,1,0,Yes,,,never smoked,1,2013-2014
+Female,75.0,0,0,Yes,139.0,26.6,never smoked,1,2013-2014
+Female,63.0,1,0,Yes,,22.6,smokes,1,2013-2014
+Female,58.0,1,0,Yes,,31.1,smokes,1,2013-2014
+Male,50.0,1,0,Yes,93.0,30.0,smokes,1,2013-2014
+Female,70.0,1,0,Yes,,23.6,never smoked,1,2013-2014
+Female,71.0,0,0,Yes,,29.4,formerly smoked,1,2013-2014
+Male,60.0,1,0,Yes,,28.0,smokes,1,2013-2014
+Male,41.0,0,0,Yes,90.0,25.3,never smoked,1,2013-2014
+Female,57.0,1,1,Yes,,,smokes,1,2013-2014
+Female,22.0,0,0,No,,20.6,never smoked,1,2013-2014
+Male,66.0,1,1,Yes,,26.9,formerly smoked,1,2013-2014
+Female,56.0,1,1,Yes,,49.4,formerly smoked,1,2013-2014
+Male,46.0,1,0,Yes,,29.7,smokes,1,2013-2014
+Female,49.0,1,0,Yes,104.0,27.9,formerly smoked,1,2013-2014
+Female,52.0,0,0,No,,22.6,smokes,1,2013-2014
+Female,80.0,1,1,Yes,105.0,26.4,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,,,never smoked,1,2013-2014
+Female,73.0,1,0,Yes,,34.3,never smoked,1,2013-2014
+Female,80.0,1,1,Yes,,,formerly smoked,1,2013-2014
+Female,80.0,1,0,Yes,106.0,30.7,never smoked,1,2013-2014
+Male,57.0,1,0,Yes,109.0,34.2,smokes,1,2013-2014
+Female,58.0,1,0,Yes,,35.0,never smoked,1,2013-2014
+Female,57.0,1,0,Yes,89.0,29.3,formerly smoked,1,2013-2014
+Male,64.0,1,0,Yes,123.0,22.3,smokes,1,2013-2014
+Female,65.0,1,1,No,,25.4,never smoked,1,2013-2014
+Female,78.0,1,1,Yes,,22.1,smokes,1,2013-2014
+Female,73.0,1,0,Yes,103.0,22.3,smokes,1,2013-2014
+Female,70.0,1,0,Yes,125.0,23.8,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,,30.3,never smoked,1,2013-2014
+Female,36.0,1,0,No,,24.5,never smoked,1,2013-2014
+Male,65.0,1,0,Yes,95.0,22.7,smokes,1,2013-2014
+Male,80.0,1,1,Yes,,,formerly smoked,1,2013-2014
+Male,75.0,1,1,Yes,,27.8,never smoked,1,2013-2014
+Female,38.0,0,0,No,215.0,25.7,smokes,1,2013-2014
+Male,73.0,1,0,Yes,,24.9,formerly smoked,1,2013-2014
+Male,80.0,0,0,Yes,124.0,27.3,formerly smoked,1,2013-2014
+Male,55.0,1,0,Yes,121.0,28.3,never smoked,1,2013-2014
+Female,72.0,1,1,Yes,,24.9,smokes,1,2013-2014
+Male,65.0,1,1,Yes,,33.7,formerly smoked,1,2013-2014
+Male,51.0,0,1,Yes,113.0,27.9,smokes,1,2013-2014
+Female,76.0,0,1,Yes,90.0,39.6,formerly smoked,1,2013-2014
+Female,80.0,0,0,Yes,98.0,27.2,never smoked,1,2013-2014
+Female,80.0,1,0,Yes,,27.1,never smoked,1,2013-2014
+Female,47.0,1,1,Yes,282.0,35.5,smokes,1,2013-2014
+Female,47.0,0,0,Yes,,19.5,formerly smoked,1,2013-2014
+Male,73.0,1,0,No,95.0,18.9,smokes,1,2013-2014
+Male,80.0,1,0,Yes,133.0,,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,,35.9,never smoked,1,2013-2014
+Male,80.0,1,1,Yes,110.0,33.7,formerly smoked,1,2013-2014
+Female,75.0,1,0,Yes,,32.7,never smoked,1,2013-2014
+Male,71.0,0,0,Yes,102.0,23.2,formerly smoked,1,2013-2014
+Male,74.0,1,0,Yes,121.0,32.1,formerly smoked,1,2013-2014
+Female,64.0,1,0,Yes,100.0,23.6,smokes,1,2013-2014
+Male,73.0,1,0,Yes,,,never smoked,1,2013-2014
+Male,57.0,1,0,No,,38.7,never smoked,1,2013-2014
+Male,73.0,1,0,Yes,,,never smoked,1,2013-2014
+Female,80.0,1,0,Yes,,,never smoked,1,2013-2014
+Male,80.0,1,1,Yes,,36.9,never smoked,1,2013-2014
+Female,80.0,0,0,Yes,101.0,24.3,never smoked,1,2013-2014
+Female,60.0,1,1,No,91.0,24.2,formerly smoked,1,2013-2014
+Male,54.0,1,0,Yes,162.0,30.7,smokes,1,2013-2014
+Male,76.0,0,0,Yes,,32.3,formerly smoked,1,2013-2014
+Female,80.0,1,1,Yes,,24.6,never smoked,1,2013-2014
+Male,51.0,1,0,Yes,70.0,19.5,smokes,1,2013-2014
+Female,75.0,1,0,Yes,96.0,27.3,never smoked,1,2013-2014
+Female,48.0,0,0,No,,31.3,never smoked,1,2013-2014
+Female,80.0,1,0,Yes,,25.8,never smoked,1,2013-2014
+Male,57.0,1,0,Yes,99.0,28.3,never smoked,1,2013-2014
+Female,80.0,1,0,Yes,,25.9,formerly smoked,1,2013-2014
+Male,68.0,1,0,Yes,,31.2,formerly smoked,1,2013-2014
+Male,80.0,1,0,Yes,105.0,24.9,never smoked,1,2013-2014
+Female,67.0,1,1,Yes,,23.9,never smoked,1,2013-2014
+Female,72.0,1,0,Yes,,27.9,never smoked,1,2013-2014
+Male,64.0,1,0,Yes,144.0,49.4,never smoked,1,2013-2014
+Female,57.0,1,1,Yes,398.0,35.4,never smoked,1,2015-2016
+Male,80.0,1,0,Yes,,,formerly smoked,1,2015-2016
+Male,80.0,1,0,Yes,,29.1,formerly smoked,1,2015-2016
+Male,69.0,0,0,No,105.0,28.2,formerly smoked,1,2015-2016
+Male,61.0,0,0,Yes,,22.3,smokes,1,2015-2016
+Female,80.0,1,0,Yes,110.0,26.9,never smoked,1,2015-2016
+Male,68.0,1,1,Yes,139.0,30.5,smokes,1,2015-2016
+Female,56.0,0,0,Yes,,31.1,formerly smoked,1,2015-2016
+Male,61.0,0,0,Yes,,28.4,never smoked,1,2015-2016
+Female,47.0,0,0,No,,35.9,never smoked,1,2015-2016
+Male,75.0,1,0,Yes,,24.7,formerly smoked,1,2015-2016
+Male,63.0,1,1,Yes,82.0,19.9,formerly smoked,1,2015-2016
+Male,67.0,1,1,Yes,,36.9,formerly smoked,1,2015-2016
+Male,63.0,1,0,Yes,,27.8,never smoked,1,2015-2016
+Male,59.0,1,0,Yes,,26.9,smokes,1,2015-2016
+Male,59.0,1,0,No,,28.8,formerly smoked,1,2015-2016
+Male,63.0,1,1,Yes,,34.0,formerly smoked,1,2015-2016
+Male,54.0,1,0,Yes,,27.3,smokes,1,2015-2016
+Female,80.0,1,0,Yes,,22.9,never smoked,1,2015-2016
+Female,28.0,1,0,No,,33.9,never smoked,1,2015-2016
+Female,80.0,0,0,Yes,,25.1,formerly smoked,1,2015-2016
+Female,71.0,1,0,Yes,,30.9,never smoked,1,2015-2016
+Male,71.0,1,0,Yes,219.0,31.7,smokes,1,2015-2016
+Male,44.0,1,0,Yes,,21.7,smokes,1,2015-2016
+Female,48.0,1,0,Yes,,33.1,never smoked,1,2015-2016
+Female,66.0,1,0,Yes,126.0,36.7,never smoked,1,2015-2016
+Female,64.0,1,0,Yes,,24.0,never smoked,1,2015-2016
+Male,76.0,1,1,Yes,,31.0,formerly smoked,1,2015-2016
+Male,24.0,0,0,No,90.0,25.1,smokes,1,2015-2016
+Female,65.0,1,0,No,106.0,29.0,formerly smoked,1,2015-2016
+Male,75.0,0,0,Yes,,31.8,formerly smoked,1,2015-2016
+Male,59.0,1,0,Yes,146.0,36.8,smokes,1,2015-2016
+Female,80.0,1,1,Yes,,25.9,formerly smoked,1,2015-2016
+Female,74.0,0,0,Yes,,32.1,never smoked,1,2015-2016
+Male,78.0,1,0,Yes,118.0,26.9,never smoked,1,2015-2016
+Male,32.0,0,0,Yes,99.0,36.6,smokes,1,2015-2016
+Female,62.0,1,1,Yes,,25.3,smokes,1,2015-2016
+Female,55.0,1,1,Yes,,33.6,smokes,1,2015-2016
+Male,80.0,0,1,Yes,,23.8,never smoked,1,2015-2016
+Female,75.0,0,0,Yes,106.0,45.1,never smoked,1,2015-2016
+Male,67.0,1,0,Yes,103.0,31.0,formerly smoked,1,2015-2016
+Female,55.0,1,0,Yes,115.0,44.4,never smoked,1,2015-2016
+Female,72.0,1,0,Yes,,33.3,never smoked,1,2015-2016
+Male,31.0,0,0,No,,24.2,smokes,1,2015-2016
+Female,66.0,1,1,Yes,158.0,30.1,smokes,1,2015-2016
+Female,61.0,1,0,Yes,,26.1,never smoked,1,2015-2016
+Female,68.0,1,0,Yes,203.0,33.8,never smoked,1,2015-2016
+Female,80.0,1,0,Yes,198.0,26.1,never smoked,1,2015-2016
+Female,38.0,1,0,Yes,87.0,37.5,formerly smoked,1,2015-2016
+Female,80.0,1,1,Yes,118.0,29.0,formerly smoked,1,2015-2016
+Female,68.0,0,1,Yes,91.0,25.0,never smoked,1,2015-2016
+Female,80.0,1,1,Yes,81.0,16.9,never smoked,1,2015-2016
+Male,53.0,0,0,No,,33.0,smokes,1,2015-2016
+Female,54.0,0,0,Yes,107.0,31.8,never smoked,1,2015-2016
+Female,77.0,0,0,Yes,,34.5,never smoked,1,2015-2016
+Female,57.0,1,0,Yes,106.0,30.8,smokes,1,2015-2016
+Female,65.0,1,1,Yes,,45.6,never smoked,1,2015-2016
+Male,46.0,0,0,Yes,79.0,29.2,smokes,1,2015-2016
+Male,80.0,1,0,Yes,,,formerly smoked,1,2015-2016
+Female,62.0,1,0,Yes,107.0,23.7,never smoked,1,2015-2016
+Male,80.0,1,0,Yes,162.0,26.8,never smoked,1,2015-2016
+Male,76.0,1,1,Yes,,27.3,never smoked,1,2015-2016
+Female,57.0,0,0,Yes,,28.8,smokes,1,2015-2016
+Female,80.0,0,0,Yes,137.0,27.8,formerly smoked,1,2015-2016
+Male,80.0,0,0,Yes,155.0,27.9,smokes,1,2015-2016
+Male,62.0,1,0,Yes,181.0,45.0,formerly smoked,1,2015-2016
+Male,63.0,0,0,Yes,,23.9,never smoked,1,2015-2016
+Male,78.0,0,1,Yes,,24.9,formerly smoked,1,2015-2016
+Male,77.0,1,0,Yes,184.0,25.7,formerly smoked,1,2015-2016
+Male,52.0,1,0,Yes,,32.3,smokes,1,2015-2016
+Male,50.0,0,0,No,96.0,27.5,smokes,1,2015-2016
+Male,58.0,1,0,Yes,194.0,41.1,never smoked,1,2015-2016
+Female,32.0,0,0,Yes,,24.4,never smoked,1,2015-2016
+Female,63.0,1,0,Yes,138.0,36.0,never smoked,1,2015-2016
+Male,67.0,1,0,Yes,,34.5,never smoked,1,2015-2016
+Male,69.0,1,0,Yes,115.0,29.6,formerly smoked,1,2015-2016
+Male,69.0,0,0,Yes,93.0,27.9,never smoked,1,2015-2016
+Female,62.0,1,0,No,,19.9,smokes,1,2015-2016
+Male,80.0,1,1,Yes,122.0,32.0,formerly smoked,1,2015-2016
+Female,62.0,0,1,No,,38.4,never smoked,1,2015-2016
+Female,60.0,1,1,Yes,,29.9,never smoked,1,2015-2016
+Male,60.0,0,0,Yes,197.0,36.4,never smoked,1,2015-2016
+Female,65.0,1,1,Yes,,34.9,smokes,1,2015-2016
+Male,59.0,1,1,Yes,,28.2,formerly smoked,1,2015-2016
+Male,68.0,1,1,Yes,104.0,26.4,formerly smoked,1,2015-2016
+Male,62.0,1,1,Yes,112.0,26.9,never smoked,1,2015-2016
+Male,53.0,1,0,No,,27.0,smokes,1,2015-2016
+Female,80.0,1,1,Yes,109.0,24.5,never smoked,1,2015-2016
+Male,80.0,1,0,Yes,,25.8,formerly smoked,1,2015-2016
+Female,62.0,0,0,Yes,120.0,24.0,smokes,1,2015-2016
+Male,72.0,0,0,Yes,,,formerly smoked,1,2015-2016
+Male,47.0,1,0,No,112.0,,never smoked,1,2015-2016
+Female,66.0,1,1,Yes,,23.0,smokes,1,2015-2016
+Female,80.0,1,1,Yes,,,smokes,1,2015-2016
+Male,64.0,1,1,Yes,118.0,24.3,smokes,1,2015-2016
+Female,44.0,1,0,No,,48.5,smokes,1,2015-2016
+Male,80.0,0,0,Yes,,28.7,formerly smoked,1,2015-2016
+Female,62.0,1,1,Yes,94.0,19.7,never smoked,1,2015-2016
+Male,62.0,0,0,Yes,,20.6,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,147.0,43.2,never smoked,1,2015-2016
+Male,70.0,1,1,Yes,107.0,28.3,never smoked,1,2015-2016
+Female,80.0,0,0,Yes,82.0,30.0,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,,22.3,never smoked,1,2015-2016
+Female,80.0,1,1,Yes,,36.9,formerly smoked,1,2015-2016
+Female,80.0,1,1,Yes,111.0,25.2,never smoked,1,2015-2016
+Male,67.0,1,0,Yes,313.0,40.2,never smoked,1,2015-2016
+Female,79.0,1,1,Yes,124.0,30.2,formerly smoked,1,2015-2016
+Male,80.0,0,0,Yes,97.0,26.2,never smoked,1,2015-2016
+Male,49.0,1,1,Yes,,53.8,smokes,1,2015-2016
+Female,72.0,1,0,Yes,,33.5,never smoked,1,2015-2016
+Female,50.0,0,0,Yes,,26.5,never smoked,1,2015-2016
+Female,58.0,1,1,Yes,,,smokes,1,2015-2016
+Female,43.0,0,0,Yes,,22.2,smokes,1,2015-2016
+Male,80.0,0,0,Yes,,23.2,formerly smoked,1,2015-2016
+Male,69.0,1,0,Yes,115.0,33.2,formerly smoked,1,2015-2016
+Male,50.0,1,0,Yes,,31.0,smokes,1,2015-2016
+Male,74.0,1,1,Yes,,24.8,never smoked,1,2015-2016
+Female,70.0,1,1,Yes,94.0,25.9,formerly smoked,1,2015-2016
+Female,58.0,0,0,Yes,,34.5,never smoked,1,2015-2016
+Male,78.0,1,0,Yes,128.0,,never smoked,1,2015-2016
+Female,65.0,1,1,No,130.0,29.0,smokes,1,2015-2016
+Male,62.0,1,0,Yes,,29.3,formerly smoked,1,2015-2016
+Male,80.0,1,0,Yes,,30.2,formerly smoked,1,2015-2016
+Female,64.0,1,0,Yes,,39.2,formerly smoked,1,2015-2016
+Male,80.0,1,0,No,94.0,25.2,formerly smoked,1,2015-2016
+Female,69.0,0,0,Yes,,32.5,never smoked,1,2015-2016
+Female,75.0,1,1,Yes,,35.3,never smoked,1,2015-2016
+Female,74.0,1,0,Yes,77.0,30.2,never smoked,1,2015-2016
+Female,77.0,1,1,Yes,101.0,20.2,smokes,1,2015-2016
+Female,73.0,1,0,Yes,,37.9,formerly smoked,1,2015-2016
+Male,74.0,1,1,Yes,,29.5,smokes,1,2015-2016
+Female,80.0,1,0,Yes,117.0,23.4,never smoked,1,2015-2016
+Female,67.0,1,1,No,113.0,26.7,formerly smoked,1,2015-2016
+Male,80.0,1,0,Yes,,25.1,never smoked,1,2015-2016
+Female,65.0,1,0,Yes,,19.5,smokes,1,2015-2016
+Male,79.0,1,0,Yes,113.0,26.9,formerly smoked,1,2015-2016
+Female,68.0,0,0,Yes,103.0,25.5,formerly smoked,1,2015-2016
+Female,72.0,0,0,Yes,,21.8,never smoked,1,2015-2016
+Male,58.0,1,0,No,89.0,24.0,smokes,1,2015-2016
+Female,77.0,1,1,Yes,,25.1,never smoked,1,2015-2016
+Male,44.0,1,1,No,,32.2,never smoked,1,2015-2016
+Female,65.0,1,0,Yes,183.0,35.6,never smoked,1,2015-2016
+Female,35.0,1,0,Yes,95.0,37.8,smokes,1,2015-2016
+Male,79.0,1,0,No,,24.2,formerly smoked,1,2015-2016
+Male,78.0,0,1,Yes,,31.5,never smoked,1,2015-2016
+Male,63.0,0,0,Yes,,,formerly smoked,1,2015-2016
+Female,52.0,1,0,Yes,,,never smoked,1,2015-2016
+Male,51.0,0,0,Yes,,33.7,formerly smoked,1,2015-2016
+Male,77.0,0,0,Yes,,28.7,formerly smoked,1,2015-2016
+Male,56.0,1,1,Yes,,40.1,never smoked,1,2015-2016
+Female,74.0,1,1,Yes,,,never smoked,1,2015-2016
+Male,67.0,1,0,No,,,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,108.0,23.6,never smoked,1,2015-2016
+Male,65.0,1,1,Yes,180.0,23.9,never smoked,1,2015-2016
+Male,60.0,1,1,Yes,,35.7,never smoked,1,2015-2016
+Male,41.0,0,0,Yes,88.0,23.3,smokes,1,2015-2016
+Male,69.0,1,0,Yes,,25.7,formerly smoked,1,2015-2016
+Male,71.0,1,1,Yes,204.0,25.4,formerly smoked,1,2015-2016
+Male,60.0,1,1,Yes,123.0,34.7,never smoked,1,2015-2016
+Male,80.0,1,0,Yes,,,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,97.0,28.6,never smoked,1,2015-2016
+Male,76.0,1,0,Yes,,,smokes,1,2015-2016
+Female,42.0,1,0,Yes,,27.1,smokes,1,2015-2016
+Male,38.0,0,0,Yes,127.0,21.7,never smoked,1,2015-2016
+Male,41.0,0,0,Yes,103.0,25.7,smokes,1,2015-2016
+Female,50.0,1,0,Yes,106.0,31.9,never smoked,1,2015-2016
+Female,80.0,1,0,Yes,151.0,35.6,never smoked,1,2015-2016
+Male,73.0,1,1,Yes,,31.6,formerly smoked,1,2015-2016
+Female,56.0,1,0,Yes,,29.0,smokes,1,2015-2016
+Male,61.0,1,0,Yes,,31.8,formerly smoked,1,2015-2016
+Male,69.0,1,0,Yes,,,formerly smoked,1,2015-2016
+Female,80.0,0,0,Yes,,25.3,formerly smoked,1,2015-2016
+Male,80.0,1,1,Yes,95.0,26.6,formerly smoked,1,2015-2016
+Male,80.0,1,0,Yes,,,never smoked,1,2015-2016
+Male,62.0,1,0,Yes,,29.1,never smoked,1,2015-2016
+Female,29.0,0,0,Yes,,19.3,smokes,1,2015-2016
+Female,27.0,0,0,No,92.0,47.8,smokes,1,2015-2016
+Male,80.0,1,1,Yes,71.0,30.3,never smoked,1,2015-2016
+Male,80.0,0,1,Yes,,31.2,formerly smoked,1,2015-2016
+Male,65.0,1,0,Yes,104.0,28.5,formerly smoked,1,2015-2016
+Female,64.0,1,0,No,126.0,34.6,never smoked,1,2015-2016
+Male,80.0,0,1,Yes,,,formerly smoked,1,2015-2016
+Male,80.0,1,1,Yes,79.0,22.6,smokes,1,2015-2016
+Female,80.0,1,0,Yes,,25.8,never smoked,1,2015-2016
+Male,34.0,0,0,Yes,322.0,45.4,never smoked,1,2015-2016
+Male,67.0,0,0,Yes,,23.7,formerly smoked,1,2015-2016
+Female,55.0,1,0,Yes,96.0,34.5,smokes,1,2015-2016
+Female,55.0,1,0,Yes,,35.1,formerly smoked,1,2015-2016
+Female,74.0,0,0,Yes,,,never smoked,1,2015-2016
+Male,75.0,1,1,Yes,,40.3,formerly smoked,1,2015-2016
+Male,61.0,1,0,Yes,100.0,28.4,smokes,1,2015-2016
+Male,61.0,1,0,Yes,164.0,43.2,formerly smoked,1,2015-2016
+Male,43.0,1,0,No,,42.0,smokes,1,2015-2016
+Male,74.0,1,1,Yes,281.0,26.5,formerly smoked,1,2015-2016
+Female,48.0,1,1,Yes,89.0,32.8,never smoked,1,2015-2016
+Male,77.0,1,1,Yes,111.0,37.9,formerly smoked,1,2015-2016
+Male,76.0,0,0,Yes,90.0,30.4,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,129.0,37.1,never smoked,1,2015-2016
+Female,73.0,0,0,Yes,103.0,33.2,never smoked,1,2015-2016
+Female,51.0,0,0,Yes,,49.7,smokes,1,2015-2016
+Male,71.0,1,0,Yes,,28.1,formerly smoked,1,2015-2016
+Male,56.0,0,0,Yes,,,smokes,1,2015-2016
+Male,73.0,0,1,Yes,156.0,,formerly smoked,1,2015-2016
+Female,80.0,1,1,No,,36.3,never smoked,1,2015-2016
+Male,80.0,0,0,Yes,100.0,22.1,formerly smoked,1,2015-2016
+Female,55.0,1,0,Yes,117.0,37.3,formerly smoked,1,2015-2016
+Female,64.0,0,0,Yes,116.0,41.1,formerly smoked,1,2015-2016
+Male,80.0,1,0,Yes,101.0,,formerly smoked,1,2015-2016
+Female,72.0,1,0,Yes,,23.4,formerly smoked,1,2015-2016
+Female,80.0,1,0,Yes,103.0,25.1,never smoked,1,2017-2020 (P_)
+Male,76.0,1,1,Yes,,21.5,smokes,1,2017-2020 (P_)
+Female,62.0,1,0,Yes,,36.4,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,25.5,formerly smoked,1,2017-2020 (P_)
+Male,40.0,1,0,Yes,,25.9,Unknown,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,65.0,1,0,,,23.1,never smoked,1,2017-2020 (P_)
+Female,66.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,29.0,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,98.0,31.6,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,113.0,34.2,never smoked,1,2017-2020 (P_)
+Male,56.0,1,0,Yes,,30.6,never smoked,1,2017-2020 (P_)
+Male,47.0,1,0,Yes,112.0,35.2,smokes,1,2017-2020 (P_)
+Male,78.0,1,0,Yes,,26.5,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,133.0,29.5,smokes,1,2017-2020 (P_)
+Female,56.0,1,0,Yes,143.0,23.9,never smoked,1,2017-2020 (P_)
+Female,66.0,1,0,Yes,,45.3,smokes,1,2017-2020 (P_)
+Female,77.0,1,0,Yes,129.0,38.6,never smoked,1,2017-2020 (P_)
+Male,67.0,1,0,Yes,103.0,19.0,never smoked,1,2017-2020 (P_)
+Male,46.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,20.6,never smoked,1,2017-2020 (P_)
+Male,64.0,1,0,Yes,,28.9,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,39.4,formerly smoked,1,2017-2020 (P_)
+Female,58.0,1,0,Yes,,28.1,never smoked,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,55.0,1,1,Yes,,28.2,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,118.0,25.6,formerly smoked,1,2017-2020 (P_)
+Female,50.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,65.0,0,0,Yes,200.0,23.6,formerly smoked,1,2017-2020 (P_)
+Male,62.0,0,1,Yes,,24.6,smokes,1,2017-2020 (P_)
+Female,80.0,0,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,54.0,0,0,Yes,,55.0,never smoked,1,2017-2020 (P_)
+Female,53.0,1,0,Yes,,28.1,smokes,1,2017-2020 (P_)
+Male,71.0,1,0,Yes,107.0,31.1,formerly smoked,1,2017-2020 (P_)
+Male,70.0,0,0,Yes,,21.5,smokes,1,2017-2020 (P_)
+Male,70.0,1,1,Yes,107.0,19.1,smokes,1,2017-2020 (P_)
+Male,53.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,80.0,0,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,24.6,never smoked,1,2017-2020 (P_)
+Female,75.0,0,0,Yes,,25.9,formerly smoked,1,2017-2020 (P_)
+Male,52.0,1,0,Yes,,30.6,never smoked,1,2017-2020 (P_)
+Female,62.0,1,1,No,291.0,37.1,never smoked,1,2017-2020 (P_)
+Female,35.0,0,0,Yes,94.0,31.7,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,32.7,never smoked,1,2017-2020 (P_)
+Male,70.0,1,1,Yes,88.0,,smokes,1,2017-2020 (P_)
+Female,69.0,1,0,Yes,,30.3,never smoked,1,2017-2020 (P_)
+Male,60.0,0,0,Yes,100.0,26.0,formerly smoked,1,2017-2020 (P_)
+Female,23.0,0,0,Yes,,43.3,never smoked,1,2017-2020 (P_)
+Male,64.0,1,1,Yes,111.0,33.8,formerly smoked,1,2017-2020 (P_)
+Male,58.0,1,1,Yes,,33.2,never smoked,1,2017-2020 (P_)
+Male,44.0,1,1,Yes,,35.4,formerly smoked,1,2017-2020 (P_)
+Female,68.0,0,0,No,,,smokes,1,2017-2020 (P_)
+Male,70.0,0,0,Yes,,34.3,formerly smoked,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,,25.4,smokes,1,2017-2020 (P_)
+Male,77.0,1,1,Yes,220.0,38.3,formerly smoked,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,93.0,25.8,formerly smoked,1,2017-2020 (P_)
+Male,73.0,1,0,No,151.0,25.7,never smoked,1,2017-2020 (P_)
+Male,78.0,1,1,Yes,144.0,27.4,never smoked,1,2017-2020 (P_)
+Male,70.0,1,0,Yes,,25.1,smokes,1,2017-2020 (P_)
+Male,65.0,1,0,Yes,92.0,27.6,smokes,1,2017-2020 (P_)
+Male,51.0,1,0,No,97.0,18.1,smokes,1,2017-2020 (P_)
+Male,64.0,1,1,Yes,,32.3,never smoked,1,2017-2020 (P_)
+Female,64.0,1,1,Yes,,19.0,smokes,1,2017-2020 (P_)
+Male,51.0,1,0,Yes,106.0,29.1,never smoked,1,2017-2020 (P_)
+Female,67.0,1,0,Yes,,27.9,formerly smoked,1,2017-2020 (P_)
+Male,66.0,1,0,Yes,,33.2,formerly smoked,1,2017-2020 (P_)
+Female,74.0,1,0,Yes,,31.2,never smoked,1,2017-2020 (P_)
+Female,51.0,1,0,Yes,95.0,18.7,smokes,1,2017-2020 (P_)
+Male,77.0,1,1,Yes,125.0,30.0,formerly smoked,1,2017-2020 (P_)
+Female,77.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,69.0,1,1,Yes,133.0,33.5,formerly smoked,1,2017-2020 (P_)
+Female,66.0,0,0,No,,19.5,never smoked,1,2017-2020 (P_)
+Male,79.0,0,1,Yes,,28.6,formerly smoked,1,2017-2020 (P_)
+Female,43.0,1,0,Yes,,32.0,smokes,1,2017-2020 (P_)
+Female,64.0,1,0,Yes,97.0,,smokes,1,2017-2020 (P_)
+Female,47.0,1,0,Yes,,38.2,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,128.0,27.9,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,27.7,formerly smoked,1,2017-2020 (P_)
+Female,35.0,1,0,Yes,95.0,34.7,never smoked,1,2017-2020 (P_)
+Male,61.0,0,0,No,194.0,33.6,never smoked,1,2017-2020 (P_)
+Male,63.0,0,0,Yes,,20.1,smokes,1,2017-2020 (P_)
+Male,55.0,1,1,Yes,96.0,27.1,smokes,1,2017-2020 (P_)
+Male,71.0,1,0,Yes,,28.5,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,22.9,formerly smoked,1,2017-2020 (P_)
+Male,45.0,0,0,Yes,105.0,38.1,smokes,1,2017-2020 (P_)
+Male,60.0,1,0,Yes,98.0,31.4,smokes,1,2017-2020 (P_)
+Female,70.0,1,0,Yes,,32.8,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,72.0,1,0,Yes,,46.0,formerly smoked,1,2017-2020 (P_)
+Female,78.0,1,0,Yes,,26.9,formerly smoked,1,2017-2020 (P_)
+Male,57.0,0,0,No,,30.5,formerly smoked,1,2017-2020 (P_)
+Male,59.0,1,0,Yes,,28.4,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,27.6,formerly smoked,1,2017-2020 (P_)
+Female,77.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,77.0,0,0,Yes,114.0,25.9,never smoked,1,2017-2020 (P_)
+Female,56.0,1,1,No,,41.0,formerly smoked,1,2017-2020 (P_)
+Male,52.0,1,0,Yes,,44.1,never smoked,1,2017-2020 (P_)
+Male,59.0,0,0,Yes,,20.5,smokes,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,28.0,formerly smoked,1,2017-2020 (P_)
+Male,73.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Male,61.0,1,0,Yes,113.0,47.0,formerly smoked,1,2017-2020 (P_)
+Female,66.0,1,0,Yes,94.0,,formerly smoked,1,2017-2020 (P_)
+Female,58.0,1,0,Yes,,25.3,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,78.0,1,0,Yes,,22.4,never smoked,1,2017-2020 (P_)
+Female,80.0,0,0,Yes,108.0,25.0,never smoked,1,2017-2020 (P_)
+Female,57.0,1,1,Yes,131.0,41.7,never smoked,1,2017-2020 (P_)
+Female,67.0,1,0,Yes,,37.3,formerly smoked,1,2017-2020 (P_)
+Female,65.0,1,1,Yes,157.0,34.4,formerly smoked,1,2017-2020 (P_)
+Female,49.0,0,0,Yes,131.0,48.8,smokes,1,2017-2020 (P_)
+Male,75.0,1,0,Yes,,32.6,formerly smoked,1,2017-2020 (P_)
+Male,75.0,1,0,Yes,96.0,31.0,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,26.1,never smoked,1,2017-2020 (P_)
+Male,71.0,1,1,Yes,99.0,20.8,smokes,1,2017-2020 (P_)
+Male,73.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,78.0,1,1,Yes,163.0,17.0,never smoked,1,2017-2020 (P_)
+Male,68.0,1,0,Yes,,,smokes,1,2017-2020 (P_)
+Female,50.0,0,0,Yes,,22.2,never smoked,1,2017-2020 (P_)
+Female,53.0,1,0,Yes,124.0,29.6,never smoked,1,2017-2020 (P_)
+Female,51.0,0,0,Yes,,19.0,never smoked,1,2017-2020 (P_)
+Male,79.0,0,0,Yes,99.0,24.4,formerly smoked,1,2017-2020 (P_)
+Female,71.0,0,0,Yes,95.0,28.9,never smoked,1,2017-2020 (P_)
+Male,52.0,1,0,Yes,110.0,32.4,smokes,1,2017-2020 (P_)
+Female,66.0,1,0,,106.0,29.9,never smoked,1,2017-2020 (P_)
+Male,59.0,0,0,Yes,,41.0,never smoked,1,2017-2020 (P_)
+Male,34.0,1,0,No,,39.6,smokes,1,2017-2020 (P_)
+Female,56.0,1,0,Yes,,21.1,smokes,1,2017-2020 (P_)
+Male,62.0,0,0,Yes,,26.4,formerly smoked,1,2017-2020 (P_)
+Female,61.0,0,0,No,92.0,31.9,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Female,48.0,1,0,No,,24.0,smokes,1,2017-2020 (P_)
+Female,52.0,1,0,Yes,106.0,46.6,never smoked,1,2017-2020 (P_)
+Female,80.0,0,0,Yes,88.0,28.5,never smoked,1,2017-2020 (P_)
+Male,61.0,1,0,Yes,,24.0,never smoked,1,2017-2020 (P_)
+Female,74.0,1,1,No,101.0,39.8,smokes,1,2017-2020 (P_)
+Male,66.0,1,1,Yes,,22.7,never smoked,1,2017-2020 (P_)
+Female,37.0,1,0,No,105.0,40.5,formerly smoked,1,2017-2020 (P_)
+Male,61.0,1,0,Yes,153.0,27.5,never smoked,1,2017-2020 (P_)
+Male,55.0,1,1,Yes,285.0,41.3,never smoked,1,2017-2020 (P_)
+Male,75.0,1,0,Yes,,32.8,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,107.0,29.0,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,31.4,formerly smoked,1,2017-2020 (P_)
+Male,68.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,66.0,1,0,Yes,,15.4,smokes,1,2017-2020 (P_)
+Male,78.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,62.0,1,0,No,,25.6,formerly smoked,1,2017-2020 (P_)
+Female,72.0,1,1,Yes,,32.7,never smoked,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,91.0,34.6,smokes,1,2017-2020 (P_)
+Female,59.0,1,0,No,109.0,40.1,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,28.8,never smoked,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,123.0,30.0,formerly smoked,1,2017-2020 (P_)
+Male,74.0,1,0,Yes,124.0,29.6,smokes,1,2017-2020 (P_)
+Male,68.0,1,0,Yes,,33.9,formerly smoked,1,2017-2020 (P_)
+Male,71.0,1,0,Yes,,23.7,never smoked,1,2017-2020 (P_)
+Female,58.0,1,1,Yes,114.0,29.5,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,62.0,1,0,Yes,,34.9,smokes,1,2017-2020 (P_)
+Male,52.0,1,0,Yes,,27.1,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,133.0,36.4,never smoked,1,2017-2020 (P_)
+Male,65.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,74.0,1,0,Yes,,38.8,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,30.1,never smoked,1,2017-2020 (P_)
+Female,52.0,0,0,Yes,,25.2,never smoked,1,2017-2020 (P_)
+Male,63.0,1,1,Yes,,35.8,never smoked,1,2017-2020 (P_)
+Female,69.0,1,0,Yes,,26.6,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,114.0,24.3,never smoked,1,2017-2020 (P_)
+Female,45.0,1,0,Yes,179.0,38.7,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,28.2,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Male,70.0,0,0,Yes,,25.1,never smoked,1,2017-2020 (P_)
+Female,35.0,0,0,Yes,90.0,27.4,formerly smoked,1,2017-2020 (P_)
+Female,55.0,1,0,Yes,102.0,15.5,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,93.0,,never smoked,1,2017-2020 (P_)
+Male,34.0,0,0,Yes,,21.8,never smoked,1,2017-2020 (P_)
+Female,61.0,1,0,No,,,smokes,1,2017-2020 (P_)
+Female,47.0,1,1,Yes,,48.4,never smoked,1,2017-2020 (P_)
+Male,65.0,1,1,Yes,,31.9,formerly smoked,1,2017-2020 (P_)
+Female,74.0,1,0,Yes,,34.4,never smoked,1,2017-2020 (P_)
+Male,58.0,1,0,Yes,,35.9,never smoked,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,,,never smoked,1,2017-2020 (P_)
+Female,72.0,1,0,Yes,116.0,33.5,smokes,1,2017-2020 (P_)
+Female,72.0,1,0,Yes,174.0,32.0,never smoked,1,2017-2020 (P_)
+Male,57.0,0,0,No,,27.1,smokes,1,2017-2020 (P_)
+Female,73.0,1,0,Yes,,26.4,smokes,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,63.0,1,0,Yes,183.0,25.8,formerly smoked,1,2017-2020 (P_)
+Male,50.0,0,0,No,,29.8,never smoked,1,2017-2020 (P_)
+Male,49.0,0,0,Yes,107.0,26.5,smokes,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,106.0,29.1,formerly smoked,1,2017-2020 (P_)
+Male,70.0,1,0,Yes,,24.2,formerly smoked,1,2017-2020 (P_)
+Female,55.0,1,1,Yes,127.0,30.8,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,22.0,never smoked,1,2017-2020 (P_)
+Male,38.0,1,0,No,,,never smoked,1,2017-2020 (P_)
+Male,66.0,0,1,Yes,126.0,27.4,smokes,1,2017-2020 (P_)
+Female,57.0,1,0,Yes,200.0,31.7,smokes,1,2017-2020 (P_)
+Male,73.0,1,1,Yes,362.0,33.9,never smoked,1,2017-2020 (P_)
+Female,50.0,1,1,Yes,154.0,48.4,smokes,1,2017-2020 (P_)
+Female,20.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,35.9,never smoked,1,2017-2020 (P_)
+Male,72.0,1,1,Yes,106.0,33.9,formerly smoked,1,2017-2020 (P_)
+Female,63.0,1,1,Yes,120.0,34.5,Unknown,1,2017-2020 (P_)
+Male,60.0,1,1,Yes,,41.9,formerly smoked,1,2017-2020 (P_)
+Female,71.0,1,0,Yes,,28.9,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,28.9,formerly smoked,1,2017-2020 (P_)
+Female,61.0,1,0,Yes,100.0,20.8,never smoked,1,2017-2020 (P_)
+Female,55.0,1,1,No,100.0,30.7,never smoked,1,2017-2020 (P_)
+Male,68.0,0,0,Yes,,24.7,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,21.1,formerly smoked,1,2017-2020 (P_)
+Male,67.0,1,0,Yes,247.0,,formerly smoked,1,2017-2020 (P_)
+Male,66.0,1,0,Yes,,32.2,never smoked,1,2017-2020 (P_)
+Male,67.0,1,0,Yes,91.0,28.9,smokes,1,2017-2020 (P_)
+Female,65.0,1,0,Yes,88.0,23.6,formerly smoked,1,2017-2020 (P_)
+Female,68.0,1,0,Yes,141.0,42.7,smokes,1,2017-2020 (P_)
+Female,44.0,0,0,Yes,,38.8,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,107.0,26.4,formerly smoked,1,2017-2020 (P_)
+Male,79.0,0,1,Yes,96.0,23.7,never smoked,1,2017-2020 (P_)
+Male,67.0,1,0,Yes,,28.6,formerly smoked,1,2017-2020 (P_)
+Female,77.0,1,0,Yes,,33.5,never smoked,1,2017-2020 (P_)
+Male,69.0,1,1,Yes,135.0,27.8,never smoked,1,2017-2020 (P_)
+Female,75.0,0,0,Yes,91.0,20.8,never smoked,1,2017-2020 (P_)
+Female,66.0,1,0,Yes,154.0,,smokes,1,2017-2020 (P_)
+Female,57.0,1,0,Yes,92.0,16.8,smokes,1,2017-2020 (P_)
+Male,50.0,1,0,Yes,,24.2,smokes,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,106.0,43.3,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,No,,23.9,never smoked,1,2017-2020 (P_)
+Male,72.0,1,0,Yes,,35.2,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,25.7,formerly smoked,1,2017-2020 (P_)
+Male,72.0,1,1,Yes,154.0,34.7,formerly smoked,1,2017-2020 (P_)
+Female,49.0,0,0,Yes,,23.9,smokes,1,2017-2020 (P_)
+Female,70.0,1,1,Yes,,25.6,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,115.0,23.1,never smoked,1,2017-2020 (P_)
+Female,74.0,1,1,Yes,,31.7,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,98.0,27.2,smokes,1,2017-2020 (P_)
+Female,53.0,1,1,No,,35.0,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,60.0,1,1,Yes,101.0,,smokes,1,2017-2020 (P_)
+Male,67.0,0,1,Yes,,29.5,never smoked,1,2017-2020 (P_)
+Female,76.0,1,1,Yes,,33.4,formerly smoked,1,2017-2020 (P_)
+Female,48.0,1,0,Yes,,36.0,never smoked,1,2017-2020 (P_)
+Female,49.0,1,0,Yes,102.0,41.1,smokes,1,2017-2020 (P_)
+Female,70.0,1,1,Yes,96.0,29.1,formerly smoked,1,2017-2020 (P_)
+Male,66.0,0,0,Yes,106.0,36.0,formerly smoked,1,2017-2020 (P_)
+Female,63.0,1,0,Yes,96.0,26.3,never smoked,1,2017-2020 (P_)
+Female,79.0,1,0,Yes,107.0,34.4,formerly smoked,1,2017-2020 (P_)
+Female,60.0,0,0,No,,24.5,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,89.0,,never smoked,1,2017-2020 (P_)
+Male,64.0,0,1,Yes,142.0,22.2,smokes,1,2017-2020 (P_)
+Female,55.0,1,1,Yes,97.0,50.8,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,28.1,never smoked,1,2017-2020 (P_)
+Female,71.0,1,0,Yes,155.0,25.6,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Female,75.0,1,0,Yes,,38.9,smokes,1,2017-2020 (P_)
+Male,68.0,1,1,Yes,,42.4,formerly smoked,1,2017-2020 (P_)
+Male,65.0,1,0,Yes,,36.7,smokes,1,2017-2020 (P_)
+Female,62.0,1,0,Yes,,45.0,formerly smoked,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,,24.9,formerly smoked,1,2017-2020 (P_)
+Female,59.0,0,0,Yes,91.0,21.9,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,89.0,19.9,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,17.3,smokes,1,2017-2020 (P_)
+Female,33.0,0,0,No,,,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,125.0,29.6,never smoked,1,2017-2020 (P_)
+Female,57.0,1,0,Yes,,21.2,never smoked,1,2017-2020 (P_)
+Female,53.0,1,0,No,,52.4,never smoked,1,2017-2020 (P_)
+Male,76.0,1,1,Yes,,25.9,formerly smoked,1,2017-2020 (P_)
+Female,73.0,0,1,No,,,formerly smoked,1,2017-2020 (P_)
+Male,60.0,1,0,Yes,141.0,41.3,never smoked,1,2017-2020 (P_)
+Female,39.0,1,0,Yes,,,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,35.5,formerly smoked,1,2017-2020 (P_)
+Female,62.0,1,1,Yes,116.0,27.4,smokes,1,2017-2020 (P_)
+Female,74.0,1,0,Yes,,23.2,never smoked,1,2017-2020 (P_)
+Female,45.0,1,0,No,104.0,41.9,smokes,1,2017-2020 (P_)
+Female,67.0,1,0,Yes,,28.9,never smoked,1,2017-2020 (P_)
+Female,54.0,0,0,No,99.0,39.3,never smoked,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,,30.7,never smoked,1,2017-2020 (P_)
+Male,34.0,1,0,No,,26.6,smokes,1,2017-2020 (P_)
+Male,50.0,0,0,Yes,,27.9,smokes,1,2017-2020 (P_)
+Male,63.0,1,0,Yes,,24.2,smokes,1,2017-2020 (P_)
+Male,51.0,1,1,Yes,,30.7,smokes,1,2017-2020 (P_)
+Male,74.0,1,1,Yes,118.0,42.3,never smoked,1,2017-2020 (P_)
+Female,65.0,1,1,Yes,,33.0,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,29.4,formerly smoked,1,2017-2020 (P_)
+Female,60.0,1,0,Yes,116.0,35.5,never smoked,1,2017-2020 (P_)
+Male,51.0,0,0,No,,30.1,formerly smoked,1,2017-2020 (P_)
+Male,74.0,1,0,Yes,108.0,,never smoked,1,2017-2020 (P_)
+Male,65.0,0,0,Yes,,24.8,formerly smoked,1,2017-2020 (P_)
+Female,75.0,1,0,Yes,,20.2,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,61.0,1,0,Yes,123.0,30.5,never smoked,1,2017-2020 (P_)
+Female,80.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,74.0,1,0,Yes,101.0,25.2,formerly smoked,1,2017-2020 (P_)
+Male,76.0,1,1,Yes,,28.8,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,126.0,24.9,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Female,54.0,0,0,Yes,87.0,28.3,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,130.0,32.2,formerly smoked,1,2017-2020 (P_)
+Female,74.0,0,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,98.0,23.3,never smoked,1,2017-2020 (P_)
+Male,64.0,1,0,Yes,,29.9,formerly smoked,1,2017-2020 (P_)
+Female,70.0,1,0,Yes,,37.7,never smoked,1,2017-2020 (P_)
+Male,73.0,0,0,Yes,,21.5,formerly smoked,1,2017-2020 (P_)
+Female,73.0,1,0,Yes,,24.6,formerly smoked,1,2017-2020 (P_)
+Male,67.0,1,1,Yes,,20.6,formerly smoked,1,2017-2020 (P_)
+Male,56.0,1,0,No,,24.9,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,110.0,28.2,formerly smoked,1,2017-2020 (P_)
+Female,53.0,1,0,No,100.0,24.1,formerly smoked,1,2017-2020 (P_)
+Female,80.0,0,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,133.0,24.9,formerly smoked,1,2017-2020 (P_)
+Female,69.0,1,0,Yes,,24.9,never smoked,1,2017-2020 (P_)
+Male,60.0,1,0,No,,30.6,formerly smoked,1,2017-2020 (P_)
+Male,65.0,1,1,Yes,,35.0,formerly smoked,1,2017-2020 (P_)
+Female,49.0,1,0,Yes,,37.7,formerly smoked,1,2017-2020 (P_)
+Male,61.0,0,1,Yes,,19.2,smokes,1,2017-2020 (P_)
+Female,49.0,1,0,Yes,,44.7,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,107.0,25.3,never smoked,1,2017-2020 (P_)
+Male,68.0,1,1,Yes,,30.4,formerly smoked,1,2017-2020 (P_)
+Male,74.0,1,0,Yes,129.0,30.5,never smoked,1,2017-2020 (P_)
+Female,28.0,0,0,No,,,never smoked,1,2017-2020 (P_)
+Male,22.0,0,0,Yes,,33.9,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,22.3,formerly smoked,1,2017-2020 (P_)
+Female,62.0,1,0,Yes,100.0,43.8,smokes,1,2017-2020 (P_)
+Male,47.0,1,0,Yes,101.0,29.6,smokes,1,2017-2020 (P_)
+Female,77.0,0,0,Yes,95.0,22.2,never smoked,1,2017-2020 (P_)
+Male,72.0,1,1,Yes,350.0,28.3,never smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,21.9,never smoked,1,2017-2020 (P_)
+Female,49.0,1,0,Yes,,31.5,smokes,1,2017-2020 (P_)
+Female,69.0,1,0,Yes,124.0,39.4,never smoked,1,2017-2020 (P_)
+Female,63.0,0,0,Yes,186.0,38.8,formerly smoked,1,2017-2020 (P_)
+Female,55.0,1,0,Yes,103.0,26.1,never smoked,1,2017-2020 (P_)
+Female,65.0,1,1,Yes,93.0,42.8,formerly smoked,1,2017-2020 (P_)
+Male,70.0,1,1,Yes,,35.8,formerly smoked,1,2017-2020 (P_)
+Female,67.0,1,0,Yes,,29.2,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,33.3,formerly smoked,1,2017-2020 (P_)
+Male,69.0,1,1,Yes,,36.1,never smoked,1,2017-2020 (P_)
+Female,75.0,1,1,Yes,,25.0,never smoked,1,2017-2020 (P_)
+Female,77.0,1,0,No,,20.0,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,24.6,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,37.6,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,119.0,25.8,formerly smoked,1,2017-2020 (P_)
+Female,65.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Male,70.0,0,1,Yes,,27.9,formerly smoked,1,2017-2020 (P_)
+Male,65.0,1,1,Yes,,34.9,formerly smoked,1,2017-2020 (P_)
+Female,58.0,1,1,Yes,90.0,37.8,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,31.0,formerly smoked,1,2017-2020 (P_)
+Female,70.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,61.0,1,1,Yes,,36.1,never smoked,1,2017-2020 (P_)
+Male,50.0,1,1,Yes,104.0,27.7,formerly smoked,1,2017-2020 (P_)
+Female,54.0,1,1,Yes,102.0,28.0,smokes,1,2017-2020 (P_)
+Female,52.0,0,1,Yes,,23.7,never smoked,1,2017-2020 (P_)
+Male,64.0,0,0,Yes,,26.2,smokes,1,2017-2020 (P_)
+Female,52.0,1,0,Yes,91.0,29.9,smokes,1,2017-2020 (P_)
+Male,76.0,1,1,Yes,96.0,34.2,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,24.6,formerly smoked,1,2017-2020 (P_)
+Female,24.0,0,0,Yes,92.0,33.8,never smoked,1,2017-2020 (P_)
+Female,61.0,1,0,Yes,,34.0,never smoked,1,2017-2020 (P_)
+Male,78.0,1,0,Yes,,32.6,formerly smoked,1,2017-2020 (P_)
+Female,59.0,1,0,No,88.0,33.7,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,105.0,21.8,smokes,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,,smokes,1,2017-2020 (P_)
+Male,68.0,0,0,Yes,94.0,28.4,smokes,1,2017-2020 (P_)
+Female,63.0,1,0,No,,25.9,formerly smoked,1,2017-2020 (P_)
+Female,68.0,1,0,Yes,,30.3,never smoked,1,2017-2020 (P_)
+Male,49.0,1,0,Yes,101.0,,smokes,1,2017-2020 (P_)
+Female,57.0,1,0,Yes,95.0,27.8,formerly smoked,1,2017-2020 (P_)
+Male,55.0,0,0,Yes,,,smokes,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,71.0,1,1,Yes,158.0,53.7,formerly smoked,1,2017-2020 (P_)
+Female,70.0,1,0,Yes,94.0,31.0,formerly smoked,1,2017-2020 (P_)
+Male,60.0,1,0,Yes,,22.8,smokes,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,67.0,1,0,Yes,,21.3,never smoked,1,2017-2020 (P_)
+Male,46.0,1,0,Yes,115.0,22.3,formerly smoked,1,2017-2020 (P_)
+Male,66.0,1,1,Yes,107.0,42.9,smokes,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,75.0,1,0,Yes,104.0,22.5,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,26.6,never smoked,1,2017-2020 (P_)
+Female,67.0,1,1,Yes,,31.7,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,33.8,formerly smoked,1,2017-2020 (P_)
+Female,66.0,1,1,Yes,,36.5,smokes,1,2017-2020 (P_)
+Female,61.0,1,0,Yes,,37.1,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,30.1,never smoked,1,2017-2020 (P_)
+Female,63.0,0,0,Yes,98.0,30.6,smokes,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,41.0,1,0,Yes,188.0,,formerly smoked,1,2017-2020 (P_)
+Female,70.0,1,0,Yes,118.0,29.3,never smoked,1,2017-2020 (P_)
+Male,49.0,0,0,No,96.0,20.6,never smoked,1,2017-2020 (P_)
+Female,58.0,1,0,Yes,371.0,33.1,formerly smoked,1,2017-2020 (P_)
+Female,55.0,0,0,Yes,,19.8,smokes,1,2017-2020 (P_)
+Female,71.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,144.0,37.6,formerly smoked,1,2017-2020 (P_)
+Female,28.0,0,0,Yes,,25.4,never smoked,1,2017-2020 (P_)
+Female,72.0,0,0,Yes,,26.2,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,,40.4,never smoked,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,31.5,formerly smoked,1,2017-2020 (P_)
+Female,68.0,1,0,Yes,99.0,54.0,formerly smoked,1,2017-2020 (P_)
+Female,57.0,1,0,Yes,,34.6,never smoked,1,2017-2020 (P_)
+Female,78.0,1,0,Yes,116.0,39.7,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,53.0,1,0,Yes,153.0,32.3,never smoked,1,2017-2020 (P_)
+Female,64.0,1,0,No,,28.0,smokes,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,,26.4,smokes,1,2017-2020 (P_)
+Female,77.0,1,0,Yes,106.0,24.6,never smoked,1,2017-2020 (P_)
+Male,72.0,1,0,Yes,136.0,28.1,formerly smoked,1,2017-2020 (P_)
+Male,69.0,1,0,Yes,120.0,26.7,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,25.2,smokes,1,2017-2020 (P_)
+Male,66.0,1,1,Yes,,32.1,never smoked,1,2017-2020 (P_)
+Male,55.0,1,0,Yes,,39.8,never smoked,1,2017-2020 (P_)
+Female,32.0,0,0,Yes,,23.1,never smoked,1,2017-2020 (P_)
+Female,74.0,1,0,No,86.0,19.7,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,40.2,formerly smoked,1,2017-2020 (P_)
+Male,71.0,1,0,Yes,206.0,34.4,never smoked,1,2017-2020 (P_)
+Female,52.0,1,0,Yes,53.0,34.1,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,45.0,1,1,Yes,,62.8,never smoked,1,2017-2020 (P_)
+Male,72.0,1,0,Yes,110.0,30.1,formerly smoked,1,2017-2020 (P_)
+Female,60.0,1,0,Yes,88.0,31.3,never smoked,1,2017-2020 (P_)
+Female,65.0,1,0,No,106.0,25.9,never smoked,1,2017-2020 (P_)
+Female,52.0,1,0,Yes,,26.1,never smoked,1,2017-2020 (P_)
+Male,77.0,1,0,Yes,148.0,31.0,formerly smoked,1,2017-2020 (P_)
+Female,24.0,0,0,Yes,93.0,28.8,formerly smoked,1,2017-2020 (P_)
+Male,75.0,1,0,Yes,186.0,28.8,formerly smoked,1,2017-2020 (P_)
+Female,64.0,1,0,Yes,,25.8,smokes,1,2017-2020 (P_)
+Female,52.0,1,1,Yes,,29.3,smokes,1,2017-2020 (P_)
+Female,56.0,1,0,Yes,194.0,30.3,never smoked,1,2017-2020 (P_)
+Female,76.0,1,0,Yes,,32.1,never smoked,1,2017-2020 (P_)
+Female,66.0,0,0,Yes,,26.5,smokes,1,2017-2020 (P_)
+Female,78.0,1,0,No,120.0,24.7,formerly smoked,1,2017-2020 (P_)
+Female,45.0,1,0,Yes,103.0,,never smoked,1,2017-2020 (P_)
+Male,45.0,1,0,Yes,,44.8,never smoked,1,2017-2020 (P_)
+Male,77.0,0,0,Yes,150.0,25.9,never smoked,1,2017-2020 (P_)
+Male,52.0,1,0,Yes,83.0,35.1,never smoked,1,2017-2020 (P_)
+Male,50.0,1,1,Yes,100.0,27.8,smokes,1,2017-2020 (P_)
+Female,47.0,0,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,68.0,1,1,Yes,,28.4,formerly smoked,1,2017-2020 (P_)
+Male,55.0,1,1,Yes,175.0,35.9,formerly smoked,1,2017-2020 (P_)
+Male,67.0,1,1,Yes,93.0,32.2,formerly smoked,1,2017-2020 (P_)
+Female,80.0,0,0,Yes,101.0,26.1,formerly smoked,1,2017-2020 (P_)
+Male,57.0,1,0,Yes,95.0,22.8,smokes,1,2017-2020 (P_)
+Male,80.0,0,1,Yes,115.0,35.6,never smoked,1,2017-2020 (P_)
+Male,53.0,1,0,Yes,292.0,30.0,formerly smoked,1,2017-2020 (P_)
+Male,57.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Male,66.0,1,0,Yes,108.0,35.9,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,29.5,formerly smoked,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,123.0,32.2,formerly smoked,1,2017-2020 (P_)
+Male,72.0,0,1,Yes,111.0,20.6,smokes,1,2017-2020 (P_)
+Male,62.0,0,0,Yes,95.0,30.8,smokes,1,2017-2020 (P_)
+Female,32.0,0,0,No,88.0,23.1,smokes,1,2017-2020 (P_)
+Female,43.0,0,0,Yes,123.0,35.1,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,0,Yes,102.0,31.8,formerly smoked,1,2017-2020 (P_)
+Female,58.0,1,0,Yes,,33.9,smokes,1,2017-2020 (P_)
+Male,59.0,1,0,No,98.0,37.6,never smoked,1,2017-2020 (P_)
+Female,60.0,1,0,Yes,,33.9,formerly smoked,1,2017-2020 (P_)
+Male,37.0,1,1,Yes,,31.0,smokes,1,2017-2020 (P_)
+Male,67.0,1,1,Yes,112.0,25.9,formerly smoked,1,2017-2020 (P_)
+Female,58.0,1,0,Yes,87.0,49.9,formerly smoked,1,2017-2020 (P_)
+Female,67.0,0,0,Yes,161.0,35.8,smokes,1,2017-2020 (P_)
+Female,54.0,1,0,Yes,124.0,25.2,formerly smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,35.9,formerly smoked,1,2017-2020 (P_)
+Male,78.0,0,0,Yes,,23.0,never smoked,1,2017-2020 (P_)
+Female,46.0,1,0,Yes,109.0,33.5,formerly smoked,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,103.0,22.4,never smoked,1,2017-2020 (P_)
+Male,74.0,0,0,Yes,110.0,28.9,formerly smoked,1,2017-2020 (P_)
+Female,58.0,0,0,Yes,,34.5,never smoked,1,2017-2020 (P_)
+Male,60.0,1,0,No,,33.2,smokes,1,2017-2020 (P_)
+Female,76.0,1,0,Yes,,20.7,formerly smoked,1,2017-2020 (P_)
+Male,69.0,1,0,Yes,,21.9,smokes,1,2017-2020 (P_)
+Female,66.0,1,1,Yes,136.0,36.3,never smoked,1,2017-2020 (P_)
+Male,80.0,0,0,Yes,,22.5,formerly smoked,1,2017-2020 (P_)
+Male,64.0,1,1,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,57.0,0,0,Yes,356.0,34.7,formerly smoked,1,2017-2020 (P_)
+Female,59.0,0,0,Yes,109.0,35.3,smokes,1,2017-2020 (P_)
+Female,51.0,0,0,No,,29.8,never smoked,1,2017-2020 (P_)
+Male,62.0,1,0,Yes,,32.2,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,,never smoked,1,2017-2020 (P_)
+Male,80.0,1,0,Yes,,,formerly smoked,1,2017-2020 (P_)
+Female,44.0,1,1,No,109.0,47.3,never smoked,1,2017-2020 (P_)
+Male,60.0,1,0,Yes,88.0,19.2,never smoked,1,2017-2020 (P_)
+Male,55.0,0,0,Yes,,40.9,never smoked,1,2017-2020 (P_)
+Female,64.0,1,1,Yes,,31.3,formerly smoked,1,2017-2020 (P_)
+Female,69.0,1,0,Yes,,,never smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,114.0,21.0,formerly smoked,1,2017-2020 (P_)
+Female,80.0,1,1,Yes,,25.3,never smoked,1,2017-2020 (P_)
+Male,66.0,1,0,Yes,,42.8,formerly smoked,1,2017-2020 (P_)
+Male,64.0,0,0,Yes,105.0,37.5,formerly smoked,1,2017-2020 (P_)

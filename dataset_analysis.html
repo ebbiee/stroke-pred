@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Stroke Dataset — Deep Dive</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0b1020;--panel:#121933;--ink:#e8ecf8;--muted:#9aa3c7;
+    --accent:#7c5cff;--accent2:#22d3ee;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;
+    --card:#161e3d;--border:#222a55;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1020,#0a0e22 60%);color:var(--ink)}
+  header{padding:48px 28px 28px;text-align:center;background:radial-gradient(1200px 400px at 50% -100px,rgba(124,92,255,.35),transparent 60%)}
+  header h1{margin:0;font-size:40px;letter-spacing:-.02em}
+  header p{color:var(--muted);max-width:780px;margin:14px auto 0;font-size:17px}
+  .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#10183a;color:var(--accent2);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  main{max-width:1150px;margin:0 auto;padding:24px 20px 80px}
+  section{margin:34px 0}
+  h2{font-size:24px;margin:0 0 12px;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:18px 0 8px;color:#cdd5ff}
+  .grid{display:grid;gap:16px}
+  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:840px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .card h4{margin:0 0 6px;color:#fff;font-size:15px}
+  .card p{margin:4px 0 0;color:var(--muted);font-size:14px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;font-size:14px}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--border)}
+  th{background:#1a234a;color:#cfd6ff;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .num-big{font-size:28px;font-weight:700;color:#fff}
+  .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  code{background:#0a1130;border:1px solid var(--border);padding:1px 6px;border-radius:6px;color:#cbd5ff;font-size:13px}
+  .legend{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:6px;flex-wrap:wrap}
+  .swatch{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:middle;margin-right:5px}
+  .insight{background:linear-gradient(135deg,rgba(124,92,255,.16),rgba(34,211,238,.10));border:1px solid #2a3270}
+  ul{margin:6px 0 0 18px;padding:0}
+  li{margin:4px 0;color:var(--muted)}
+  li b{color:#fff}
+  .footer{color:var(--muted);text-align:center;font-size:13px;padding:30px}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">Dataset Deep Dive · 2026-05-14</span>
+  <h1>🩺 Stroke Prediction Dataset</h1>
+  <p>The file <code>healthcare-dataset-stroke-data.csv</code> is the well-known Kaggle "Healthcare Stroke" dataset by fedesoriano. Each row is one anonymous patient with 11 features and a binary <b>stroke</b> label. Here's what's actually in it.</p>
+</header>
+
+<main>
+
+<!-- TOP STATS -->
+<section>
+  <h2>📐 At a glance</h2>
+  <div class="grid g4">
+    <div class="card"><div class="lbl">Rows</div><div class="num-big">5,110</div><p>1 patient per row</p></div>
+    <div class="card"><div class="lbl">Columns</div><div class="num-big">12</div><p>1 ID + 10 features + 1 label</p></div>
+    <div class="card"><div class="lbl">Stroke positive</div><div class="num-big" style="color:#fca5a5">249</div><p>4.87% — heavily imbalanced</p></div>
+    <div class="card"><div class="lbl">BMI missing</div><div class="num-big" style="color:#fcd34d">201</div><p>3.93% — coded as "N/A"</p></div>
+  </div>
+</section>
+
+<!-- SCHEMA -->
+<section>
+  <h2>🧬 Schema</h2>
+  <table>
+    <tr><th>#</th><th>Column</th><th>Type</th><th>Range / Values</th><th>Role</th></tr>
+    <tr><td>1</td><td><code>id</code></td><td>int</td><td>unique patient ID</td><td>drop before training</td></tr>
+    <tr><td>2</td><td><code>gender</code></td><td>cat</td><td>Male / Female / Other(1)</td><td>feature</td></tr>
+    <tr><td>3</td><td><code>age</code></td><td>float</td><td>0.1 – 82.0</td><td>feature ⭐</td></tr>
+    <tr><td>4</td><td><code>hypertension</code></td><td>bin</td><td>0 / 1</td><td>feature</td></tr>
+    <tr><td>5</td><td><code>heart_disease</code></td><td>bin</td><td>0 / 1</td><td>feature</td></tr>
+    <tr><td>6</td><td><code>ever_married</code></td><td>cat</td><td>Yes / No</td><td>feature (proxy for age)</td></tr>
+    <tr><td>7</td><td><code>work_type</code></td><td>cat</td><td>Private / Self-employed / Govt_job / children / Never_worked</td><td>feature</td></tr>
+    <tr><td>8</td><td><code>Residence_type</code></td><td>cat</td><td>Urban / Rural</td><td>feature (weak)</td></tr>
+    <tr><td>9</td><td><code>avg_glucose_level</code></td><td>float</td><td>55.1 – 271.7 mg/dL</td><td>feature ⭐</td></tr>
+    <tr><td>10</td><td><code>bmi</code></td><td>float</td><td>10.3 – 97.6 (201 N/A)</td><td>feature</td></tr>
+    <tr><td>11</td><td><code>smoking_status</code></td><td>cat</td><td>never smoked / formerly smoked / smokes / Unknown</td><td>feature</td></tr>
+    <tr><td>12</td><td><code>stroke</code></td><td>bin</td><td>0 / 1</td><td>🎯 target</td></tr>
+  </table>
+</section>
+
+<!-- CLASS IMBALANCE DONUT -->
+<section>
+  <h2>⚖️ Class imbalance — the central problem</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Stroke vs no-stroke</h4>
+      <svg viewBox="0 0 200 200" width="100%" height="220">
+        <!-- donut -->
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#22c55e" stroke-width="28"/>
+        <!-- 4.87% red arc: circumference 2πr≈440, 4.87% = 21.4 -->
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#ef4444" stroke-width="28"
+                stroke-dasharray="21.4 418.6" transform="rotate(-90 100 100)"/>
+        <text x="100" y="96" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">4.87%</text>
+        <text x="100" y="118" text-anchor="middle" fill="#9aa3c7" font-size="11">stroke positive</text>
+      </svg>
+      <div class="legend">
+        <span><span class="swatch" style="background:#ef4444"></span>Stroke (249)</span>
+        <span><span class="swatch" style="background:#22c55e"></span>No stroke (4,861)</span>
+      </div>
+    </div>
+    <div class="card insight">
+      <h4>Why this matters</h4>
+      <ul>
+        <li>A model that always predicts "no stroke" would score <b>95.13% accuracy</b>. Accuracy is therefore meaningless here.</li>
+        <li>Real metrics to watch: <b>Recall</b> (caught strokes), <b>Precision</b> (false-alarm rate), and <b>PR-AUC</b>.</li>
+        <li>Only ~249 positive cases — splitting 80/20 leaves ~50 positives in the test set. Single-split metrics will be noisy; stratified K-fold is safer.</li>
+        <li>SMOTE / class_weight are reasonable fixes <i>during training</i>, but never resample the test set.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AGE — strongest signal -->
+<section>
+  <h2>📈 Age — by far the strongest signal</h2>
+  <div class="card">
+    <h4>Stroke rate by age bin (%)</h4>
+    <svg viewBox="0 0 700 280" width="100%" height="280">
+      <!-- axes -->
+      <line x1="60" y1="240" x2="680" y2="240" stroke="#222a55"/>
+      <line x1="60" y1="20" x2="60" y2="240" stroke="#222a55"/>
+      <!-- y ticks 0,5,10,15,20,25 -->
+      <g font-size="10" fill="#9aa3c7">
+        <text x="55" y="244" text-anchor="end">0%</text>
+        <text x="55" y="200" text-anchor="end">5%</text>
+        <text x="55" y="156" text-anchor="end">10%</text>
+        <text x="55" y="112" text-anchor="end">15%</text>
+        <text x="55" y="68" text-anchor="end">20%</text>
+        <text x="55" y="24" text-anchor="end">25%</text>
+      </g>
+      <!-- bars: scale 1% = 8.8 px (220px / 25%) -->
+      <!-- data: 0.21, 0.50, 1.64, 5.76, 7.57, 16.52, 21.51 -->
+      <g>
+        <rect x="80" y="238.1" width="70" height="1.9" fill="#22d3ee"/>
+        <rect x="170" y="235.6" width="70" height="4.4" fill="#22d3ee"/>
+        <rect x="260" y="225.6" width="70" height="14.4" fill="#22d3ee"/>
+        <rect x="350" y="189.3" width="70" height="50.7" fill="#7c5cff"/>
+        <rect x="440" y="173.4" width="70" height="66.6" fill="#7c5cff"/>
+        <rect x="530" y="94.6" width="70" height="145.4" fill="#ef4444"/>
+        <rect x="620" y="50.7" width="55" height="189.3" fill="#ef4444"/>
+      </g>
+      <!-- value labels -->
+      <g font-size="11" fill="#fff" text-anchor="middle">
+        <text x="115" y="233">0.21%</text>
+        <text x="205" y="230">0.50%</text>
+        <text x="295" y="220">1.64%</text>
+        <text x="385" y="184">5.76%</text>
+        <text x="475" y="168">7.57%</text>
+        <text x="565" y="89">16.5%</text>
+        <text x="647" y="45">21.5%</text>
+      </g>
+      <!-- x labels -->
+      <g font-size="11" fill="#9aa3c7" text-anchor="middle">
+        <text x="115" y="258">0–20</text>
+        <text x="205" y="258">20–40</text>
+        <text x="295" y="258">40–50</text>
+        <text x="385" y="258">50–60</text>
+        <text x="475" y="258">60–70</text>
+        <text x="565" y="258">70–80</text>
+        <text x="647" y="258">80+</text>
+      </g>
+      <text x="370" y="275" text-anchor="middle" fill="#9aa3c7" font-size="11">Age (years)</text>
+    </svg>
+    <p style="color:var(--muted);font-size:14px">
+      Risk grows roughly <b>exponentially</b> with age. Below 40 it's well under 1%. Above 80 it's more than 1-in-5. Any model is going to lean heavily on this single feature — and SHAP plots in <code>outputs/</code> confirm it does.
+    </p>
+  </div>
+</section>
+
+<!-- BINARY CONDITIONS -->
+<section>
+  <h2>❤️ Comorbidities — small groups, big lift</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Hypertension</h4>
+      <svg viewBox="0 0 400 130" width="100%" height="130">
+        <text x="0" y="20" fill="#9aa3c7" font-size="12">No (n=4,612)</text>
+        <rect x="0" y="30" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="30" width="35.7" height="20" fill="#22d3ee"/>
+        <text x="42" y="45" fill="#fff" font-size="12">3.97%</text>
+        <text x="0" y="80" fill="#9aa3c7" font-size="12">Yes (n=498)</text>
+        <rect x="0" y="90" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="90" width="132.5" height="20" fill="#ef4444"/>
+        <text x="140" y="105" fill="#fff" font-size="12">13.25%</text>
+      </svg>
+      <p>Hypertensive patients are <b>3.3× more likely</b> to have stroke.</p>
+    </div>
+    <div class="card">
+      <h4>Heart disease</h4>
+      <svg viewBox="0 0 400 130" width="100%" height="130">
+        <text x="0" y="20" fill="#9aa3c7" font-size="12">No (n=4,834)</text>
+        <rect x="0" y="30" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="30" width="37.6" height="20" fill="#22d3ee"/>
+        <text x="44" y="45" fill="#fff" font-size="12">4.18%</text>
+        <text x="0" y="80" fill="#9aa3c7" font-size="12">Yes (n=276)</text>
+        <rect x="0" y="90" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="90" width="170.3" height="20" fill="#ef4444"/>
+        <text x="178" y="105" fill="#fff" font-size="12">17.03%</text>
+      </svg>
+      <p>Heart-disease patients are <b>4.1× more likely</b> to have stroke.</p>
+    </div>
+    <div class="card">
+      <h4>Ever married</h4>
+      <svg viewBox="0 0 400 130" width="100%" height="130">
+        <text x="0" y="20" fill="#9aa3c7" font-size="12">No (n=1,757)</text>
+        <rect x="0" y="30" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="30" width="16.5" height="20" fill="#22d3ee"/>
+        <text x="23" y="45" fill="#fff" font-size="12">1.65%</text>
+        <text x="0" y="80" fill="#9aa3c7" font-size="12">Yes (n=3,353)</text>
+        <rect x="0" y="90" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="90" width="65.6" height="20" fill="#f59e0b"/>
+        <text x="73" y="105" fill="#fff" font-size="12">6.56%</text>
+      </svg>
+      <p>This is really an <b>age proxy</b> — married people are older.</p>
+    </div>
+    <div class="card">
+      <h4>Gender</h4>
+      <svg viewBox="0 0 400 130" width="100%" height="130">
+        <text x="0" y="20" fill="#9aa3c7" font-size="12">Female (n=2,994)</text>
+        <rect x="0" y="30" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="30" width="47.1" height="20" fill="#7c5cff"/>
+        <text x="54" y="45" fill="#fff" font-size="12">4.71%</text>
+        <text x="0" y="80" fill="#9aa3c7" font-size="12">Male (n=2,115)</text>
+        <rect x="0" y="90" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="90" width="51.1" height="20" fill="#7c5cff"/>
+        <text x="58" y="105" fill="#fff" font-size="12">5.11%</text>
+      </svg>
+      <p>Practically no difference. Note: <b>only 1 "Other" patient</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK + SMOKING -->
+<section>
+  <h2>🧑‍💼 Work type & smoking</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Stroke rate by work_type</h4>
+      <table>
+        <tr><th>Category</th><th class="num">n</th><th class="num">stroke %</th></tr>
+        <tr><td>Self-employed</td><td class="num">819</td><td class="num" style="color:#fca5a5">7.94%</td></tr>
+        <tr><td>Private</td><td class="num">2,925</td><td class="num">5.09%</td></tr>
+        <tr><td>Govt_job</td><td class="num">657</td><td class="num">5.02%</td></tr>
+        <tr><td>children</td><td class="num">687</td><td class="num">0.29%</td></tr>
+        <tr><td>Never_worked</td><td class="num">22</td><td class="num">0.00%</td></tr>
+      </table>
+      <p>"children" and "Never_worked" are basically age groups. <code>Never_worked</code> only has 22 rows — useless for learning.</p>
+    </div>
+    <div class="card">
+      <h4>Stroke rate by smoking_status</h4>
+      <table>
+        <tr><th>Category</th><th class="num">n</th><th class="num">stroke %</th></tr>
+        <tr><td>formerly smoked</td><td class="num">885</td><td class="num" style="color:#fca5a5">7.91%</td></tr>
+        <tr><td>smokes</td><td class="num">789</td><td class="num">5.32%</td></tr>
+        <tr><td>never smoked</td><td class="num">1,892</td><td class="num">4.76%</td></tr>
+        <tr><td>Unknown</td><td class="num">1,544</td><td class="num">3.04%</td></tr>
+      </table>
+      <p>Counter-intuitive: <b>former smokers</b> have higher risk than current ones — almost certainly because they're older. "Unknown" (30% of rows!) skews younger.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GLUCOSE -->
+<section>
+  <h2>🩸 Glucose — bimodal distribution</h2>
+  <div class="card">
+    <h4>Stroke rate by avg_glucose_level (mg/dL)</h4>
+    <svg viewBox="0 0 700 240" width="100%" height="240">
+      <line x1="60" y1="200" x2="680" y2="200" stroke="#222a55"/>
+      <line x1="60" y1="20" x2="60" y2="200" stroke="#222a55"/>
+      <g font-size="10" fill="#9aa3c7">
+        <text x="55" y="204" text-anchor="end">0%</text>
+        <text x="55" y="155" text-anchor="end">5%</text>
+        <text x="55" y="110" text-anchor="end">10%</text>
+        <text x="55" y="65" text-anchor="end">15%</text>
+        <text x="55" y="20" text-anchor="end">20%</text>
+      </g>
+      <!-- bars: scale 1% = 9 px -->
+      <!-- 4.12, 3.06, 3.78, 4.50, 13.34 -->
+      <rect x="100" y="162.9" width="100" height="37.1" fill="#22d3ee"/>
+      <rect x="220" y="172.5" width="100" height="27.5" fill="#22d3ee"/>
+      <rect x="340" y="166" width="100" height="34" fill="#22d3ee"/>
+      <rect x="460" y="159.5" width="100" height="40.5" fill="#f59e0b"/>
+      <rect x="580" y="80" width="90" height="120" fill="#ef4444"/>
+      <g font-size="11" fill="#fff" text-anchor="middle">
+        <text x="150" y="157">4.12%</text>
+        <text x="270" y="167">3.06%</text>
+        <text x="390" y="160">3.78%</text>
+        <text x="510" y="153">4.50%</text>
+        <text x="625" y="75">13.3%</text>
+      </g>
+      <g font-size="11" fill="#9aa3c7" text-anchor="middle">
+        <text x="150" y="218">&lt;80</text>
+        <text x="270" y="218">80–100</text>
+        <text x="390" y="218">100–125</text>
+        <text x="510" y="218">125–170</text>
+        <text x="625" y="218">170+</text>
+      </g>
+      <text x="370" y="235" text-anchor="middle" fill="#9aa3c7" font-size="11">avg_glucose_level (mg/dL)</text>
+    </svg>
+    <p style="color:var(--muted);font-size:14px">
+      Glucose distribution in this dataset is <b>bimodal</b> — a normal cluster around 90 and a second hump near 200+ (likely diabetic patients). Once glucose is above ~170, stroke rate triples. Below 170 it's basically flat — meaning a linear model will under-use this feature unless you bin it or add a "high glucose" indicator.
+    </p>
+  </div>
+</section>
+
+<!-- BMI MISSING -->
+<section>
+  <h2>🕳️ The BMI-missing trap (important)</h2>
+  <div class="grid g2">
+    <div class="card insight">
+      <h4>Missingness is NOT random</h4>
+      <svg viewBox="0 0 400 130" width="100%" height="130">
+        <text x="0" y="20" fill="#9aa3c7" font-size="12">BMI present (n=4,909)</text>
+        <rect x="0" y="30" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="30" width="42.6" height="20" fill="#22d3ee"/>
+        <text x="49" y="45" fill="#fff" font-size="12">4.26% stroke</text>
+        <text x="0" y="80" fill="#9aa3c7" font-size="12">BMI missing (n=201)</text>
+        <rect x="0" y="90" width="397" height="20" fill="#1a234a"/>
+        <rect x="0" y="90" width="199" height="20" fill="#ef4444"/>
+        <text x="206" y="105" fill="#fff" font-size="12">19.90% stroke</text>
+      </svg>
+    </div>
+    <div class="card">
+      <h4>What this means</h4>
+      <ul>
+        <li>Patients with <b>missing BMI are ~5× more likely</b> to be stroke positive.</li>
+        <li>Likely they were too sick / hospitalized for BMI to be recorded — i.e. missingness <b>itself is signal</b>.</li>
+        <li>Mean-imputing BMI <b>destroys</b> that signal and even leaks a bit.</li>
+        <li>Better: add a <code>bmi_missing</code> binary flag, then impute. Or use a model that handles NaN natively (XGBoost).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- NUMERIC SUMMARY -->
+<section>
+  <h2>📋 Numeric summary</h2>
+  <table>
+    <tr><th>Feature</th><th class="num">n</th><th class="num">min</th><th class="num">max</th><th class="num">mean</th><th class="num">median</th><th class="num">std</th></tr>
+    <tr><td>age</td><td class="num">5,110</td><td class="num">0.1</td><td class="num">82.0</td><td class="num">43.23</td><td class="num">45.00</td><td class="num">22.61</td></tr>
+    <tr><td>avg_glucose_level</td><td class="num">5,110</td><td class="num">55.1</td><td class="num">271.7</td><td class="num">106.15</td><td class="num">91.88</td><td class="num">45.28</td></tr>
+    <tr><td>bmi</td><td class="num">4,909</td><td class="num">10.3</td><td class="num">97.6</td><td class="num">28.89</td><td class="num">28.10</td><td class="num">7.85</td></tr>
+  </table>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">Note BMI max of 97.6 — likely outliers or recording errors. Worth winsorizing at ~60.</p>
+</section>
+
+<!-- KEY TAKEAWAYS -->
+<section>
+  <h2>🎯 Key takeaways</h2>
+  <div class="grid g2">
+    <div class="card insight">
+      <h4>What this dataset is good for</h4>
+      <ul>
+        <li>Practicing <b>imbalanced classification</b>: SMOTE, class weights, threshold tuning, PR curves.</li>
+        <li>Learning <b>feature engineering</b>: BMI missingness as signal, glucose binning, age × condition interactions.</li>
+        <li>Demonstrating <b>explainability</b> (SHAP) — age dominates, easy to verify against medical intuition.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:#5a2a2a">
+      <h4>What it's NOT good for</h4>
+      <ul>
+        <li>Making real clinical claims — <b>only 249 positive cases</b>, single source, no temporal info.</li>
+        <li>Studying gender effects — 1 "Other" row, near-identical Male/Female base rates.</li>
+        <li>Achieving high precision — the prevalence ceiling makes precision >0.5 at decent recall basically impossible.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW DATA FLOWS -->
+<section>
+  <h2>🔁 How your code already transforms it</h2>
+  <div class="card">
+    <svg viewBox="0 0 900 260" width="100%" height="260" font-size="12">
+      <defs>
+        <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#7c5cff"/>
+        </marker>
+      </defs>
+      <!-- nodes -->
+      <g>
+        <rect x="10" y="100" width="140" height="60" rx="10" fill="#1a234a" stroke="#22d3ee"/>
+        <text x="80" y="125" text-anchor="middle" fill="#fff">healthcare-...csv</text>
+        <text x="80" y="143" text-anchor="middle" fill="#9aa3c7">5,110 × 12</text>
+
+        <rect x="190" y="100" width="140" height="60" rx="10" fill="#1a234a" stroke="#7c5cff"/>
+        <text x="260" y="120" text-anchor="middle" fill="#fff">drop id</text>
+        <text x="260" y="138" text-anchor="middle" fill="#fff">impute bmi (mean)</text>
+        <text x="260" y="154" text-anchor="middle" fill="#9aa3c7">→ cleaned_data.csv</text>
+
+        <rect x="370" y="100" width="160" height="60" rx="10" fill="#1a234a" stroke="#7c5cff"/>
+        <text x="450" y="120" text-anchor="middle" fill="#fff">OneHot (cats)</text>
+        <text x="450" y="138" text-anchor="middle" fill="#fff">StandardScaler (nums)</text>
+        <text x="450" y="154" text-anchor="middle" fill="#9aa3c7">14 features</text>
+
+        <rect x="570" y="40" width="140" height="60" rx="10" fill="#1a234a" stroke="#f59e0b"/>
+        <text x="640" y="65" text-anchor="middle" fill="#fff">train split</text>
+        <text x="640" y="83" text-anchor="middle" fill="#9aa3c7">+ SMOTE</text>
+
+        <rect x="570" y="160" width="140" height="60" rx="10" fill="#1a234a" stroke="#f59e0b"/>
+        <text x="640" y="185" text-anchor="middle" fill="#fff">test split</text>
+        <text x="640" y="203" text-anchor="middle" fill="#9aa3c7">untouched</text>
+
+        <rect x="750" y="100" width="140" height="60" rx="10" fill="#1a234a" stroke="#22c55e"/>
+        <text x="820" y="120" text-anchor="middle" fill="#fff">LR / RF / XGB</text>
+        <text x="820" y="138" text-anchor="middle" fill="#fff">+ thr. tuning</text>
+        <text x="820" y="154" text-anchor="middle" fill="#9aa3c7">→ best_model.pkl</text>
+      </g>
+      <g stroke="#7c5cff" stroke-width="2" fill="none" marker-end="url(#arr)">
+        <line x1="150" y1="130" x2="188" y2="130"/>
+        <line x1="330" y1="130" x2="368" y2="130"/>
+        <line x1="530" y1="120" x2="568" y2="80"/>
+        <line x1="530" y1="140" x2="568" y2="180"/>
+        <line x1="710" y1="70" x2="748" y2="115"/>
+        <line x1="710" y1="190" x2="748" y2="145"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="footer">Generated for <code>stroke-pred</code> · all numbers computed directly from <code>healthcare-dataset-stroke-data.csv</code> on 2026-05-14</div>
+</main>
+</body>
+</html>

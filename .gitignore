@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# NHANES raw cache (large, reproducible via fetch_nhanes.py)
+nhanes_raw/
+
+# OS
+.DS_Store
