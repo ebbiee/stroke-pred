@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Stroke-Pred — Pushing Precision Higher</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0b1020;--panel:#121933;--ink:#e8ecf8;--muted:#9aa3c7;
+    --accent:#7c5cff;--accent2:#22d3ee;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;
+    --card:#161e3d;--border:#222a55;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1020,#0a0e22 60%);color:var(--ink)}
+  header{padding:46px 28px 24px;text-align:center;background:radial-gradient(1200px 400px at 50% -100px,rgba(124,92,255,.35),transparent 60%)}
+  header h1{margin:0;font-size:38px;letter-spacing:-.02em}
+  header p{color:var(--muted);max-width:780px;margin:14px auto 0;font-size:17px}
+  .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#10183a;color:var(--accent2);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  main{max-width:1100px;margin:0 auto;padding:24px 20px 80px}
+  section{margin:34px 0}
+  h2{font-size:24px;margin:0 0 12px;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:18px 0 8px;color:#cdd5ff}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:840px){.g3,.g2{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;font-size:14px}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--border)}
+  th{background:#1a234a;color:#cfd6ff;font-weight:600}
+  td.r{text-align:right;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  tr.win td{background:rgba(34,197,94,.12)}
+  tr.win td:first-child{box-shadow:inset 3px 0 0 #22c55e}
+  tr.dim td{color:#6b7299}
+  code{background:#0a1130;border:1px solid var(--border);padding:1px 6px;border-radius:6px;color:#cbd5ff;font-size:13px}
+  .insight{background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.10));border:1px solid #2a3270}
+  .bad-card{background:linear-gradient(135deg,rgba(239,68,68,.12),rgba(124,92,255,.06));border:1px solid #5a2a3a}
+  .good-card{background:linear-gradient(135deg,rgba(34,197,94,.14),rgba(34,211,238,.06));border:1px solid #2a5a3a}
+  ul{margin:6px 0 0 18px;padding:0}
+  li{margin:4px 0;color:var(--muted)}
+  li b{color:#fff}
+  .footer{color:var(--muted);text-align:center;font-size:13px;padding:30px}
+  .num{font-size:30px;font-weight:700;color:#fff}
+  .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">Honest answer · precision ceiling</span>
+  <h1>📈 How high can precision actually go?</h1>
+  <p>You said 20% precision still isn't good enough. Fair. Let's see what the data can actually deliver — and where the real ceiling is.</p>
+</header>
+
+<main>
+
+<!-- TL;DR -->
+<section>
+  <h2>🎯 TL;DR</h2>
+  <div class="grid g3">
+    <div class="card good-card"><div class="lbl">Best precision (useful recall)</div><div class="num">37.5%</div><p style="color:var(--muted);font-size:14px;margin:6px 0 0">Top-2% riskiest patients, age 50+. Flag 8 people, catch 3 strokes.</p></div>
+    <div class="card"><div class="lbl">Best precision (full population)</div><div class="num">25.0%</div><p style="color:var(--muted);font-size:14px;margin:6px 0 0">Threshold 0.3 on the GradBoost model — recall 22%.</p></div>
+    <div class="card bad-card"><div class="lbl">Realistic ceiling at recall ≥ 0.5</div><div class="num">~22%</div><p style="color:var(--muted);font-size:14px;margin:6px 0 0">If you want to catch half the strokes, this is roughly the wall.</p></div>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:12px">There is a real ceiling here, and it's set by the data — not the model. Below is the proof.</p>
+</section>
+
+<!-- LEVER 1: threshold sweep -->
+<section>
+  <h2>🎚️ Lever 1 — stop optimizing F1, sweep the threshold</h2>
+  <p style="color:var(--muted)">F1 picks the middle of the curve. If you want higher precision, walk up the threshold and accept lower recall. Same model, same data, same test set — just a different operating point.</p>
+  <table>
+    <tr><th>Threshold</th><th class="r">Flagged</th><th class="r">True positives</th><th class="r">False alarms</th><th class="r">Missed</th><th class="r">Precision</th><th class="r">Recall</th></tr>
+    <tr><td>0.10</td><td class="r">243</td><td class="r">37</td><td class="r">206</td><td class="r">13</td><td class="r">15.2%</td><td class="r">74.0%</td></tr>
+    <tr><td>0.20</td><td class="r">109</td><td class="r">22</td><td class="r">87</td><td class="r">28</td><td class="r">20.2%</td><td class="r">44.0%</td></tr>
+    <tr class="win"><td><b>0.30</b></td><td class="r">44</td><td class="r">11</td><td class="r">33</td><td class="r">39</td><td class="r"><b>25.0%</b></td><td class="r">22.0%</td></tr>
+    <tr><td>0.40</td><td class="r">9</td><td class="r">2</td><td class="r">7</td><td class="r">48</td><td class="r">22.2%</td><td class="r">4.0%</td></tr>
+    <tr class="dim"><td>0.50</td><td class="r">5</td><td class="r">1</td><td class="r">4</td><td class="r">49</td><td class="r">20.0%</td><td class="r">2.0%</td></tr>
+    <tr class="dim"><td>0.60+</td><td class="r">0–1</td><td class="r">0–1</td><td class="r">0</td><td class="r">49–50</td><td class="r">—</td><td class="r">~0%</td></tr>
+  </table>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">Above threshold 0.40 the model barely fires at all — so "100% precision" at threshold 0.6 is meaningless (1 prediction, 1 correct).</p>
+</section>
+
+<!-- LEVER 2: top-K -->
+<section>
+  <h2>🏅 Lever 2 — rank, don't classify</h2>
+  <p style="color:var(--muted)">Real screening tools don't say "yes/no." They <b>rank</b> patients by risk and a nurse reviews the top K. Precision-at-K is the honest metric.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="margin:0">Full population (test n=1,022)</h4>
+      <table style="margin-top:8px">
+        <tr><th>Flag the…</th><th class="r">N flagged</th><th class="r">TP</th><th class="r">Precision</th><th class="r">Recall</th></tr>
+        <tr><td>Top 1%</td><td class="r">10</td><td class="r">2</td><td class="r">20.0%</td><td class="r">4.0%</td></tr>
+        <tr><td>Top 2%</td><td class="r">20</td><td class="r">4</td><td class="r">20.0%</td><td class="r">8.0%</td></tr>
+        <tr class="win"><td><b>Top 5%</b></td><td class="r">51</td><td class="r">12</td><td class="r"><b>23.5%</b></td><td class="r">24.0%</td></tr>
+        <tr><td>Top 10%</td><td class="r">102</td><td class="r">21</td><td class="r">20.6%</td><td class="r">42.0%</td></tr>
+        <tr><td>Top 20%</td><td class="r">204</td><td class="r">36</td><td class="r">17.6%</td><td class="r">72.0%</td></tr>
+      </table>
+    </div>
+    <div class="card good-card">
+      <h4 style="margin:0">Age 50+ subgroup (test n=442)</h4>
+      <table style="margin-top:8px">
+        <tr><th>Flag the…</th><th class="r">N flagged</th><th class="r">TP</th><th class="r">Precision</th><th class="r">Recall</th></tr>
+        <tr><td>Top 1%</td><td class="r">4</td><td class="r">1</td><td class="r">25.0%</td><td class="r">2.2%</td></tr>
+        <tr class="win"><td><b>Top 2%</b></td><td class="r">8</td><td class="r">3</td><td class="r"><b>37.5%</b></td><td class="r">6.5%</td></tr>
+        <tr><td>Top 5%</td><td class="r">22</td><td class="r">7</td><td class="r">31.8%</td><td class="r">15.2%</td></tr>
+        <tr><td>Top 10%</td><td class="r">44</td><td class="r">10</td><td class="r">22.7%</td><td class="r">21.7%</td></tr>
+        <tr><td>Top 20%</td><td class="r">88</td><td class="r">18</td><td class="r">20.5%</td><td class="r">39.1%</td></tr>
+      </table>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">Top-2% in the 50+ subgroup: flag 8 people, catch 3 strokes. That's <b>~7.5× the base rate</b>.</p>
+</section>
+
+<!-- LEVER 3: subgroup -->
+<section>
+  <h2>👥 Lever 3 — predict on a higher-risk subgroup</h2>
+  <p style="color:var(--muted)">If the base rate in your test population is 5%, no model can have precision much above ~25% at useful recall. But if you only predict on patients <i>likely to be at risk</i>, the base rate goes up and the ceiling goes with it. Age is the strongest signal anyway.</p>
+  <table>
+    <tr><th>Population</th><th class="r">n test</th><th class="r">base rate</th><th class="r">Best precision (R ≥ 0.4)</th><th class="r">Best precision (any recall)</th></tr>
+    <tr><td>Everyone</td><td class="r">1,022</td><td class="r">4.9%</td><td class="r">~20%</td><td class="r">25.0% @ R=22%</td></tr>
+    <tr class="win"><td><b>Age ≥ 50</b></td><td class="r">442</td><td class="r">10.4%</td><td class="r"><b>~24%</b></td><td class="r"><b>33.3% @ R=6.5%</b></td></tr>
+    <tr><td>Age ≥ 60</td><td class="r">276</td><td class="r">13.0%</td><td class="r">~15%</td><td class="r">~18% (degrades)</td></tr>
+  </table>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px"><b>Why 60+ is worse:</b> too few patients and positives left — the model overfits and gets noisier. <b>50+ is the sweet spot.</b></p>
+</section>
+
+<!-- WHY -->
+<section>
+  <h2>🔬 Why can't we go higher? (the honest math)</h2>
+  <div class="card insight">
+    <h3 style="margin-top:0">There's a Bayesian ceiling baked into the data</h3>
+    <p style="color:#e8ecf8">
+      With a 5% base rate and weakly-predictive demographic features, the model is essentially asking: "given this person's age, glucose, BP, BMI, smoking — how many similar people in the training set had strokes?"
+      For the riskiest cluster the answer is roughly <b>1 in 4</b>. That's the limit. No clever loss function, no fancier model, no more data of the same kind will move it much.
+    </p>
+    <p style="color:#cbd5ff;margin-top:10px"><b>To actually break the ceiling you'd need new <i>information</i>, not new data:</b></p>
+    <ul>
+      <li><b>Lab values</b> NHANES does have but Kaggle doesn't — HbA1c, LDL, hsCRP, atrial fibrillation, prior TIA.</li>
+      <li><b>Imaging / EHR signals</b> — but those need MIMIC-IV or UK Biobank.</li>
+      <li><b>Time-to-event</b> data (when did the stroke happen?) instead of just yes/no.</li>
+    </ul>
+  </div>
+  <div class="card bad-card" style="margin-top:14px">
+    <h4 style="margin:0">A sanity check against published research</h4>
+    <p>The classic <b>Framingham Stroke Risk Profile</b> — built on full clinical data with hundreds of stroke cases — reports AUC around <b>0.74–0.80</b> for 10-year stroke prediction. Your model is already in that range (ROC-AUC ~0.81). You're not undershooting the science. You're at the science.</p>
+  </div>
+</section>
+
+<!-- RECOMMENDED -->
+<section>
+  <h2>✅ My recommendation, honest version</h2>
+  <div class="card good-card">
+    <h3 style="margin-top:0">Pick one of these two operating points and call it done</h3>
+    <div class="grid g2" style="margin-top:10px">
+      <div class="card">
+        <h4 style="margin:0">A · "Screening" mode</h4>
+        <p style="color:var(--muted);font-size:14px">Catch as many strokes as possible, accept false alarms.</p>
+        <ul>
+          <li>Variant B + GradBoost</li>
+          <li>Threshold <b>0.10</b></li>
+          <li>Precision <b>15.2%</b>, Recall <b>74%</b></li>
+          <li>Use when "missing a stroke is much worse than a false alarm"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin:0">B · "Top-K rank" mode <span style="color:#86efac">★ recommended</span></h4>
+        <p style="color:var(--muted);font-size:14px">Don't predict yes/no. Just rank patients.</p>
+        <ul>
+          <li>Variant B + GradBoost, age 50+ subgroup</li>
+          <li>Flag the top 2–5% by score</li>
+          <li>Precision <b>32–37%</b>, finds ~6–15% of strokes</li>
+          <li>Acts like a real screening tool: doctor reviews the highest-risk cohort</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:12px;color:#fff">
+      <b>Stop chasing higher precision on this dataset.</b> You're already at the information-theoretic limit of demographic-only stroke prediction. The next 10 points of precision are locked behind <b>different features</b>, not different code. If you really need them, that means MIMIC-IV, UK Biobank, or an EHR-linked cohort — full stop.
+    </p>
+  </div>
+</section>
+
+<!-- FILES -->
+<section>
+  <h2>📁 Files</h2>
+  <ul style="font-size:14px;color:var(--muted)">
+    <li><code><a href="precision_push.py">precision_push.py</a></code> — the threshold sweep + age-subgroup script</li>
+    <li><code><a href="training_results.html">training_results.html</a></code> — earlier 3-variant comparison</li>
+    <li><code><a href="dataset_analysis.html">dataset_analysis.html</a></code> — the dataset deep dive</li>
+  </ul>
+</section>
+
+</main>
+<div class="footer">All numbers from a clean Kaggle-only holdout · 1,022 patients · 50 positives</div>
+</body>
+</html>

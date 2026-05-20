@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Stroke-Pred — What's New</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0b1020;--panel:#121933;--ink:#e8ecf8;--muted:#9aa3c7;
+    --accent:#7c5cff;--accent2:#22d3ee;--good:#22c55e;--warn:#f59e0b;--bad:#ef4444;
+    --card:#161e3d;--border:#222a55;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1020,#0a0e22 60%);color:var(--ink)}
+  header{padding:48px 28px 28px;text-align:center;background:radial-gradient(1200px 400px at 50% -100px,rgba(124,92,255,.35),transparent 60%)}
+  header h1{margin:0;font-size:42px;letter-spacing:-.02em}
+  header p{color:var(--muted);max-width:760px;margin:14px auto 0;font-size:17px}
+  .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#10183a;color:var(--accent2);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  main{max-width:1100px;margin:0 auto;padding:24px 20px 80px}
+  section{margin:34px 0}
+  h2{font-size:24px;margin:0 0 14px;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:18px 0 8px;color:#cdd5ff}
+  .grid{display:grid;gap:16px}
+  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:840px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .card h4{margin:0 0 6px;color:#fff;font-size:15px}
+  .card p{margin:4px 0 0;color:var(--muted);font-size:14px}
+  .num{font-size:28px;font-weight:700;color:#fff}
+  .lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:12px;overflow:hidden;font-size:14px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+  th{background:#1a234a;color:#cfd6ff;font-weight:600}
+  td.r{text-align:right;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  code{background:#0a1130;border:1px solid var(--border);padding:1px 6px;border-radius:6px;color:#cbd5ff;font-size:13px}
+  a{color:var(--accent2)}
+  ul{margin:6px 0 0 18px;padding:0}
+  li{margin:4px 0;color:var(--muted)}
+  li b{color:#fff}
+  .timeline{position:relative;padding-left:24px;border-left:2px solid #2a3270}
+  .step{position:relative;margin:0 0 22px 0;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+  .step::before{content:"";position:absolute;left:-32px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px #161e3d, 0 0 0 6px var(--accent)}
+  .step h4{margin:0 0 4px;color:#fff;font-size:15px}
+  .step p{margin:4px 0 0;color:var(--muted);font-size:14px}
+  .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:700;letter-spacing:.05em}
+  .t-new{background:rgba(34,197,94,.18);color:#86efac}
+  .t-warn{background:rgba(245,158,11,.18);color:#fcd34d}
+  .t-info{background:rgba(34,211,238,.18);color:#67e8f9}
+  .insight{background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.12));border:1px solid #2a3270}
+  .footer{color:var(--muted);text-align:center;font-size:13px;padding:30px}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">Status update · session recap</span>
+  <h1>📦 What's New</h1>
+  <p>Everything that's changed in <code>stroke-pred</code> since you first asked for a codebase review — files added, decisions made, and where to go next.</p>
+</header>
+
+<main>
+
+<!-- HEADLINE NUMBERS -->
+<section>
+  <h2>🎯 The headline</h2>
+  <div class="grid g4">
+    <div class="card"><div class="lbl">Stroke cases before</div><div class="num" style="color:#fca5a5">249</div><p>only from <code>healthcare-dataset-stroke-data.csv</code></p></div>
+    <div class="card"><div class="lbl">Stroke cases now</div><div class="num" style="color:#86efac">1,147</div><p>249 Kaggle + 898 NHANES → <b>4.6× more</b></p></div>
+    <div class="card"><div class="lbl">Total patients available</div><div class="num">25,804</div><p>5,110 Kaggle + 20,694 NHANES</p></div>
+    <div class="card"><div class="lbl">New files on disk</div><div class="num">4</div><p>1 script + 2 CSVs + this page</p></div>
+  </div>
+</section>
+
+<!-- FILE INVENTORY -->
+<section>
+  <h2>🗂️ New files in your repo</h2>
+  <table>
+    <tr><th>File</th><th>Size</th><th>What it is</th><th>Status</th></tr>
+    <tr><td><a href="fetch_nhanes.py"><code>fetch_nhanes.py</code></a></td><td class="r">5.8 KB</td><td>Reproducible downloader: fetches 3 NHANES cycles, joins DEMO + MCQ + BPQ + BMX + SMQ + GLU, reshapes to your Kaggle schema</td><td><span class="tag t-new">NEW</span></td></tr>
+    <tr><td><a href="nhanes_stroke_combined.csv"><code>nhanes_stroke_combined.csv</code></a></td><td class="r">1.1 MB</td><td>20,694 patients × 10 cols — full NHANES adult cohort with stroke label</td><td><span class="tag t-new">NEW</span></td></tr>
+    <tr><td><a href="nhanes_stroke_positives.csv"><code>nhanes_stroke_positives.csv</code></a></td><td class="r">48 KB</td><td>898 stroke-positive patients only — fastest way to augment the minority class</td><td><span class="tag t-new">NEW</span></td></tr>
+    <tr><td><code>nhanes_raw/</code></td><td class="r">~25 MB</td><td>18 cached <code>.XPT</code> source files (so reruns are instant)</td><td><span class="tag t-info">cache</span></td></tr>
+    <tr><td><a href="codebase_review.html"><code>codebase_review.html</code></a></td><td class="r">14 KB</td><td>Earlier — full review of the project</td><td><span class="tag t-info">existing</span></td></tr>
+    <tr><td><a href="dataset_analysis.html"><code>dataset_analysis.html</code></a></td><td class="r">23 KB</td><td>Earlier — deep dive on the Kaggle dataset</td><td><span class="tag t-info">existing</span></td></tr>
+  </table>
+</section>
+
+<!-- BREAKDOWN -->
+<section>
+  <h2>📊 What's in the NHANES file</h2>
+  <table>
+    <tr><th>Cycle</th><th class="r">Patients (answered stroke Q)</th><th class="r">Stroke positives</th><th class="r">Rate</th></tr>
+    <tr><td>2013–2014</td><td class="r">5,764</td><td class="r">202</td><td class="r">3.51%</td></tr>
+    <tr><td>2015–2016</td><td class="r">5,714</td><td class="r">209</td><td class="r">3.66%</td></tr>
+    <tr><td>2017–2020 (P_ pre-pandemic)</td><td class="r">9,216</td><td class="r">487</td><td class="r">5.28%</td></tr>
+    <tr><td><b>Total NHANES</b></td><td class="r"><b>20,694</b></td><td class="r"><b>898</b></td><td class="r"><b>4.34%</b></td></tr>
+  </table>
+
+  <h3>Columns produced (match your Kaggle schema)</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>✅ Kept and mapped</h4>
+      <ul>
+        <li><b>gender</b> ← <code>RIAGENDR</code></li>
+        <li><b>age</b> ← <code>RIDAGEYR</code></li>
+        <li><b>hypertension</b> ← <code>BPQ020</code> (ever told had high BP)</li>
+        <li><b>heart_disease</b> ← <code>MCQ160B</code> OR <code>MCQ160C</code> (CHF or CHD)</li>
+        <li><b>ever_married</b> ← <code>DMDMARTL</code> / <code>DMDMARTZ</code></li>
+        <li><b>avg_glucose_level</b> ← <code>LBXGLU</code> (fasting)</li>
+        <li><b>bmi</b> ← <code>BMXBMI</code></li>
+        <li><b>smoking_status</b> ← <code>SMQ020</code> + <code>SMQ040</code></li>
+        <li><b>stroke</b> ← <code>MCQ160F</code> ("ever told you had a stroke")</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:#5a4a2a">
+      <h4>❌ Dropped (not in NHANES public files)</h4>
+      <ul>
+        <li><b>work_type</b> — NHANES has occupation in <code>OCQ</code> but the categories don't line up with Kaggle's <i>Private / Self-employed / Govt_job / children / Never_worked</i>.</li>
+        <li><b>Residence_type</b> — urban/rural is intentionally redacted from public NHANES files to protect respondents.</li>
+      </ul>
+      <p>Your retrained model will have <b>9 features</b> instead of 11. Both dropped columns were weak predictors anyway.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DECISIONS -->
+<section>
+  <h2>🧭 Decisions made during the session</h2>
+  <div class="timeline">
+    <div class="step">
+      <h4>1 · Reviewed the existing project <span class="tag t-info">done</span></h4>
+      <p>Two notebooks, three models, SMOTE + Youden's J threshold, SHAP plots. Best model = Logistic Regression at Recall 0.875 / <b>Precision 0.135</b> / AUC 0.822. The precision number is the headline problem.</p>
+    </div>
+    <div class="step">
+      <h4>2 · Diagnosed the imbalance <span class="tag t-info">done</span></h4>
+      <p>Identified three levers for precision: <b>raise the decision threshold</b>, <b>drop SMOTE in favor of <code>class_weight</code></b>, and <b>get more positive cases</b>. Each comes with a trade-off.</p>
+    </div>
+    <div class="step">
+      <h4>3 · Evaluated external dataset options <span class="tag t-info">done</span></h4>
+      <p>MIMIC (CITI training needed), UK Biobank (paid, £3–9k), Framingham (BioLINCC form), NHANES (free, instant), Kaggle clones (mostly duplicates of what you already had).</p>
+    </div>
+    <div class="step">
+      <h4>4 · Built NHANES downloader <span class="tag t-new">today</span></h4>
+      <p>Discovered the CDC moved file hosting (the old <code>wwwn.cdc.gov/Nchs/Nhanes/2017-2018/*.XPT</code> path now returns the homepage). Found the new path: <code>wwwn.cdc.gov/Nchs/Data/Nhanes/Public/{year}/DataFiles/...</code>. Handled the 2017–2020 cycle's renamed marital column (<code>DMDMARTZ</code> instead of <code>DMDMARTL</code>).</p>
+    </div>
+    <div class="step">
+      <h4>5 · Successfully assembled 20,694 patients <span class="tag t-new">today</span></h4>
+      <p>898 stroke positives — <b>3.6× more</b> than the Kaggle file alone. If concatenated, you'd have 1,147 total positives across 25,804 patients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CAVEATS -->
+<section>
+  <h2>⚠️ Before you combine the data</h2>
+  <div class="card insight">
+    <h4>Three things to fix before <code>pd.concat</code></h4>
+    <ul>
+      <li><b>Label semantics differ.</b> Kaggle's <code>stroke</code> is from a hospital/registry source. NHANES <code>MCQ160F</code> is self-reported ("has a doctor ever told you…"). Treat them as related but not identical — and report both source labels in your features (add a <code>source</code> column).</li>
+      <li><b>Glucose has many NaNs.</b> Fasting glucose (<code>LBXGLU</code>) was only measured on ~25–35% of NHANES participants. Don't mean-impute — either drop those rows, use total glucose from <code>BIOPRO</code>, or add a <code>glucose_missing</code> indicator.</li>
+      <li><b>Drop two columns.</b> Remove <code>work_type</code> and <code>Residence_type</code> from your Kaggle file before concatenating, since NHANES doesn't have them. Retrain on the 9-feature schema.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHAT'S NEXT -->
+<section>
+  <h2>🚀 What's next (pick one)</h2>
+  <div class="grid g3">
+    <div class="card">
+      <h4>A · Just fix precision</h4>
+      <p>Keep using the Kaggle data only. Drop SMOTE, switch to <code>class_weight='balanced'</code>, sweep thresholds, plot PR curve, pick an operating point. Smallest change, fastest result.</p>
+    </div>
+    <div class="card" style="border-color:#2a4a3a">
+      <h4>B · Combine the two datasets</h4>
+      <p>Merge NHANES + Kaggle into one 25k-row training set (with a <code>source</code> column), retrain LR/RF/XGB, compare. Bigger lift but real methodological work.</p>
+    </div>
+    <div class="card">
+      <h4>C · Productionize</h4>
+      <p>Wrap the pickled model + threshold in a <code>predict.py</code> + FastAPI endpoint. Clean up the repo (README, requirements.txt, .gitignore, delete <code>Untitled.ipynb</code>).</p>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:14px">My honest recommendation: <b>do A first</b> (1 hour of work, measurable improvement), then <b>B</b> (the real win), then <b>C</b> once the model is actually good enough to deploy.</p>
+</section>
+
+<!-- QUICK COMMANDS -->
+<section>
+  <h2>⌨️ Quick reference</h2>
+  <div class="card">
+    <h4>Rerun the NHANES fetch (cached, instant on second run)</h4>
+    <pre style="background:#0a1130;border:1px solid var(--border);border-radius:8px;padding:12px;color:#cbd5ff;font-size:13px;overflow-x:auto;margin:6px 0 0"><code>.venv/bin/python fetch_nhanes.py</code></pre>
+    <h4 style="margin-top:14px">Load both datasets in a notebook</h4>
+    <pre style="background:#0a1130;border:1px solid var(--border);border-radius:8px;padding:12px;color:#cbd5ff;font-size:13px;overflow-x:auto;margin:6px 0 0"><code>import pandas as pd
+kaggle = pd.read_csv('healthcare-dataset-stroke-data.csv')
+nhanes = pd.read_csv('nhanes_stroke_combined.csv')
+print(kaggle.shape, nhanes.shape)
+print('Kaggle positives:', kaggle['stroke'].sum())
+print('NHANES positives:', nhanes['stroke'].sum())</code></pre>
+  </div>
+</section>
+
+</main>
+<div class="footer">Session recap for <code>stroke-pred</code> · all numbers verified against the actual CSVs on disk</div>
+</body>
+</html>

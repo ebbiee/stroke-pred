@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Stroke-Pred — Codebase Review</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0b1020; --panel:#121933; --ink:#e8ecf8; --muted:#9aa3c7;
+    --accent:#7c5cff; --accent2:#22d3ee; --good:#22c55e; --warn:#f59e0b; --bad:#ef4444;
+    --card:#161e3d; --border:#222a55;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;background:linear-gradient(180deg,#0b1020,#0a0e22 60%);color:var(--ink)}
+  header{padding:48px 28px 28px;text-align:center;background:radial-gradient(1200px 400px at 50% -100px,rgba(124,92,255,.35),transparent 60%)}
+  header h1{margin:0;font-size:42px;letter-spacing:-.02em}
+  header p{color:var(--muted);max-width:760px;margin:14px auto 0;font-size:17px}
+  .pill{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#10183a;color:var(--accent2);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  main{max-width:1100px;margin:0 auto;padding:24px 20px 80px}
+  section{margin:28px 0}
+  h2{font-size:24px;margin:0 0 12px;border-left:4px solid var(--accent);padding-left:12px}
+  h3{margin:18px 0 8px;color:#cdd5ff}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:780px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px}
+  .card h4{margin:0 0 6px;color:#fff;font-size:15px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  table{width:100%;border-collapse:collapse;margin-top:8px;background:var(--panel);border-radius:12px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}
+  th{background:#1a234a;color:#cfd6ff;font-weight:600}
+  tr:last-child td{border-bottom:none}
+  .tag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:600}
+  .t-good{background:rgba(34,197,94,.15);color:#86efac}
+  .t-warn{background:rgba(245,158,11,.15);color:#fcd34d}
+  .t-bad{background:rgba(239,68,68,.15);color:#fca5a5}
+  .t-info{background:rgba(34,211,238,.15);color:#67e8f9}
+  code{background:#0a1130;border:1px solid var(--border);padding:1px 6px;border-radius:6px;color:#cbd5ff;font-size:13px}
+  ul{margin:6px 0 0 18px;padding:0}
+  li{margin:4px 0}
+  .feeling{background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.12));border:1px solid #2a3270}
+  .num{font-size:26px;font-weight:700;color:#fff}
+  .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .bar{height:8px;background:#0a1130;border-radius:6px;overflow:hidden;margin-top:6px}
+  .bar > div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  footer{color:var(--muted);text-align:center;font-size:13px;padding:30px}
+  img.figure{width:100%;border-radius:10px;border:1px solid var(--border);margin-top:8px;background:#fff}
+</style>
+</head>
+<body>
+<header>
+  <span class="pill">Codebase Review · 2026-05-14</span>
+  <h1>🧠 Stroke-Pred</h1>
+  <p>A machine-learning project that predicts the likelihood of stroke from patient records — exploratory notebooks, a small saved model artifact, and a folder full of evaluation charts. Below is what it is, how it's built, what it actually achieves, and an honest opinion.</p>
+</header>
+
+<main>
+
+<section>
+  <h2>📦 What's in the box</h2>
+  <div class="grid g3">
+    <div class="card"><div class="lbl">Raw dataset</div><div class="num">5,109</div><p>rows in <code>healthcare-dataset-stroke-data.csv</code> — the well-known Kaggle stroke dataset (id, age, hypertension, glucose, BMI, smoking…)</p></div>
+    <div class="card"><div class="lbl">Cleaned dataset</div><div class="num">3,565</div><p>rows in <code>cleaned_data.csv</code> — id dropped, missing BMI imputed, some rows removed</p></div>
+    <div class="card"><div class="lbl">Saved artifacts</div><div class="num">5</div><p><code>best_model.pkl</code>, <code>preprocessor.pkl</code>, <code>feature_names.json</code>, <code>best_threshold.json</code>, <code>best_model_name.json</code></p></div>
+  </div>
+
+  <h3>File map</h3>
+  <table>
+    <tr><th>Path</th><th>Purpose</th><th>Status</th></tr>
+    <tr><td><code>model.ipynb</code></td><td>Main pipeline: EDA → preprocessing → 3 models → evaluation → SHAP → save</td><td><span class="tag t-good">primary</span></td></tr>
+    <tr><td><code>Balanceddata.ipynb</code></td><td>Re-runs training with SMOTE on an 80/20 split + a 70/15/15 split</td><td><span class="tag t-info">experiments</span></td></tr>
+    <tr><td><code>Untitled.ipynb</code></td><td>Empty scratch notebook</td><td><span class="tag t-warn">cruft</span></td></tr>
+    <tr><td><code>model/</code></td><td>Pickled Logistic Regression, preprocessor, feature names, decision threshold 0.4374</td><td><span class="tag t-good">artifacts</span></td></tr>
+    <tr><td><code>outputs/</code></td><td>29 PNGs — class imbalance, correlations, ROC curves, confusion matrices, SHAP plots</td><td><span class="tag t-good">rich</span></td></tr>
+    <tr><td><code>.ipynb_checkpoints/</code></td><td>Jupyter auto-saves committed by mistake</td><td><span class="tag t-bad">should be gitignored</span></td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>🔬 The pipeline, end to end</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>1 · Data prep</h4>
+      <ul>
+        <li>Drops <code>id</code>, imputes <code>bmi</code> N/A with mean</li>
+        <li><b>OneHotEncoder</b> (drop="first") on categoricals: gender, ever_married, work_type, Residence_type, smoking_status</li>
+        <li><b>StandardScaler</b> on age, hypertension, heart_disease, avg_glucose_level, bmi</li>
+        <li>Bundled in a <code>ColumnTransformer</code> and pickled</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>2 · Splits</h4>
+      <ul>
+        <li><code>model.ipynb</code>: stratified split, SMOTE applied to training set only</li>
+        <li><code>Balanceddata.ipynb</code>: compares 80/20 vs 70/15/15 (train/val/test), both with SMOTE</li>
+        <li>Class imbalance is severe — ~4.9% positive — so this is the right instinct</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>3 · Models trained</h4>
+      <ul>
+        <li>Logistic Regression (class_weight balanced)</li>
+        <li>Random Forest (300 trees, balanced_subsample)</li>
+        <li>XGBoost (with <code>scale_pos_weight</code>)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>4 · Threshold tuning + explainability</h4>
+      <ul>
+        <li>Best decision threshold picked via <b>Youden's J</b> (max of TPR − FPR) on ROC curve</li>
+        <li>SHAP summary + importance plots saved</li>
+        <li>"Best model" is selected by <b>highest recall</b>, not F1 or AUC</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📊 The results (from <code>model.ipynb</code>)</h2>
+  <table>
+    <tr><th>Model</th><th>Threshold</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th></tr>
+    <tr><td><b>Logistic Regression</b> 🏆</td><td>0.4374</td><td>0.677</td><td>0.135</td><td><b>0.875</b></td><td>0.233</td><td><b>0.822</b></td></tr>
+    <tr><td>Random Forest</td><td>0.5324</td><td>0.944</td><td>0.500</td><td>0.050</td><td>0.091</td><td>0.794</td></tr>
+    <tr><td>XGBoost</td><td>0.6453</td><td>0.889</td><td>0.180</td><td>0.275</td><td>0.218</td><td>0.812</td></tr>
+  </table>
+  <p style="color:var(--muted);font-size:14px;margin-top:10px">
+    Logistic Regression wins on recall (catches 87.5% of actual strokes) and on AUC. But precision is 13% — for every 100 people it flags, ~87 are false alarms. RF reports 94% accuracy but is essentially useless: it almost always predicts "no stroke", which is the trivial majority-class answer.
+  </p>
+</section>
+
+<section>
+  <h2>🧐 Honest opinion</h2>
+
+  <div class="card feeling">
+    <h3 style="margin-top:0">The short version</h3>
+    <p style="color:#e8ecf8">This is a <b>solid, well-presented student/portfolio project</b> on a classic Kaggle dataset. The thinking is right (stratified splits, SMOTE only on train, threshold tuning, SHAP, multiple algorithms), the visual output is genuinely impressive, and the code shows real understanding of why imbalanced classification is hard. It is <b>not production-grade medical software</b>, and the "winning" model's precision means it's nowhere near clinically deployable — but as a learning artifact it punches above its weight.</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card">
+      <h4>👍 What's good</h4>
+      <ul>
+        <li><b>Methodologically careful.</b> SMOTE is applied <i>after</i> the split, not before — a mistake even some published papers make.</li>
+        <li><b>Threshold tuning with Youden's J</b> instead of blindly using 0.5. That's the right move on imbalanced data.</li>
+        <li><b>Three model families compared</b> on the same footing, with confusion matrices and ROC curves saved per split.</li>
+        <li><b>SHAP plots</b> for explainability — important in any health context.</li>
+        <li>Preprocessor + model + feature names + threshold are all <b>pickled together</b>, so the artifact is actually reusable.</li>
+        <li>The <code>outputs/</code> folder is a portfolio in itself — 29 charts, consistently styled.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>👎 What concerns me</h4>
+      <ul>
+        <li><b>"Best by recall" is dangerous framing.</b> 87% recall at 13% precision means the model is flagging roughly a third of all patients as stroke risks. In any real screening scenario that's an unusable alert rate.</li>
+        <li><b>BMI imputation is mean-fill</b> — fine for a learning project, but BMI missingness here correlates with stroke outcome, so this leaks information.</li>
+        <li><b>No held-out test set in the main notebook</b> — model.ipynb seems to evaluate on what it trained-and-resampled near; the cleaner train/val/test split lives in <code>Balanceddata.ipynb</code> and the two aren't reconciled.</li>
+        <li><b>No README, no requirements.txt, no <code>.gitignore</code></b>. <code>.ipynb_checkpoints/</code> is committed. <code>Untitled.ipynb</code> is empty.</li>
+        <li><b>Two notebooks with overlapping logic</b> instead of one source of truth + a config flag. Functions like <code>build_preprocessor</code> and <code>print_distribution</code> are duplicated.</li>
+        <li><b>No tests, no inference script.</b> There's a <code>best_model.pkl</code> but no <code>predict.py</code> showing how to use it on a new patient.</li>
+        <li><b>The dataset itself is known to be problematic</b> (5,110 rows, only ~1 male stroke case in some slices, BMI N/A patterns) — any conclusions are limited by that, not by your code.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🛠️ If you wanted to take this further</h2>
+  <div class="grid g3">
+    <div class="card"><h4>Productionize</h4><p>Add a <code>predict.py</code> that loads the pickled preprocessor + model + threshold and exposes a single <code>predict(patient_dict)</code> function. Wrap it in FastAPI for a demo endpoint.</p></div>
+    <div class="card"><h4>Clean the repo</h4><p>Add <code>.gitignore</code> (checkpoints, .pkl optional), a <code>requirements.txt</code>, a README with the metrics table above, and delete <code>Untitled.ipynb</code>.</p></div>
+    <div class="card"><h4>Tighten methodology</h4><p>Use <code>Pipeline</code> + <code>cross_val_score</code> with stratified K-fold rather than a single split, optimize threshold on a <i>validation</i> set, and report precision-recall AUC (more honest than ROC-AUC on 5% prevalence).</p></div>
+    <div class="card"><h4>Better imputation</h4><p>Replace mean-fill for BMI with an iterative imputer or a "missing" indicator — the missingness itself is signal here.</p></div>
+    <div class="card"><h4>Calibrate</h4><p>Run <code>CalibratedClassifierCV</code> so the predicted probabilities mean what they say. Useful for any downstream risk-tier UI.</p></div>
+    <div class="card"><h4>Frame the trade-off</h4><p>Don't pick "best by recall." Pick the operating point and justify it: e.g. "at recall=0.7 precision is X" — that's the conversation a clinician can actually have.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>🖼️ A taste of the charts already in the repo</h2>
+  <div class="grid g2">
+    <div class="card"><h4>Class imbalance</h4><img class="figure" src="outputs/01_class_imbalance.png" alt="class imbalance"/></div>
+    <div class="card"><h4>Correlation heatmap</h4><img class="figure" src="outputs/01_correlation_heatmap.png" alt="correlation heatmap"/></div>
+    <div class="card"><h4>Model comparison</h4><img class="figure" src="outputs/model_comparison.png" alt="model comparison"/></div>
+    <div class="card"><h4>SHAP feature importance</h4><img class="figure" src="outputs/shap_importance.png" alt="shap importance"/></div>
+    <div class="card"><h4>ROC — Logistic Regression</h4><img class="figure" src="outputs/roc_curve_logistic_regression.png" alt="roc lr"/></div>
+    <div class="card"><h4>Confusion matrix — LR</h4><img class="figure" src="outputs/confusion_matrix_logistic_regression.png" alt="cm lr"/></div>
+  </div>
+</section>
+
+<section>
+  <h2>🧾 Verdict</h2>
+  <div class="card">
+    <div class="grid g3" style="align-items:center">
+      <div><div class="lbl">Methodology</div><div class="num">8 / 10</div><div class="bar"><div style="width:80%"></div></div></div>
+      <div><div class="lbl">Engineering hygiene</div><div class="num">4 / 10</div><div class="bar"><div style="width:40%"></div></div></div>
+      <div><div class="lbl">Communication / visuals</div><div class="num">9 / 10</div><div class="bar"><div style="width:90%"></div></div></div>
+    </div>
+    <p style="margin-top:14px;color:var(--muted)">
+      You clearly understand the ML side — the careful SMOTE placement, threshold tuning, and SHAP work tell me that. What's missing is the boring stuff around the model: a README, an inference script, a clean repo, and a more honest framing of the precision/recall trade-off. Do those four things and this goes from "good notebook" to "good portfolio project."
+    </p>
+  </div>
+</section>
+
+</main>
+<footer>Generated for <code>stroke-pred</code> · review by Claude · open this file in a browser to view the embedded charts</footer>
+</body>
+</html>
